@@ -1,0 +1,248 @@
+.search-top-wrapper {
+    float: left;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    position: relative;
+    display: table; 
+    border-collapse: separate;
+}
+
+.search-top-wrapper form {
+    position: relative;
+    padding-left: 10px;
+}
+
+.search-top-wrapper fa-search {
+    position: relative;
+    left: 10px;
+    color: #fff;
+}
+
+.search-top-wrapper button {
+    height: 32px;
+    border-radius: 50px;
+    position: relative;
+    right: 4px;
+    padding: 0 20px;
+}
+
+.search-top-wrapper form {
+   color: white;
+}
+
+.ui-helper-hidden-accessible {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.search-top-wrapper input:not([type=submit]):not([type=checkbox]), select, textarea {
+    border: 1px solid #e3e3e3;
+    font-size: 13px;
+    outline: 0;
+    padding: 0 15px;
+    color: #999;
+    font-family: Lato, sans-serif;
+    letter-spacing: 1px;
+    border-radius: 0
+}
+
+.search-top-wrapper input:not([type=submit]):not([type=checkbox]):focus, textarea:focus {
+    border-color: #b59677
+}
+
+.search-top-wrapper input:not([type=radio]):not([type=checkbox]), select {
+    height: 40px;
+    line-height: 1;
+    background-color: #151515;
+    color: white;
+    border: #151515;
+}
+
+.txt-rotate {
+    color: white;
+    font-size: 1.5rem;
+
+}
+.header-text{
+    float: left;
+    padding-left: 18%
+}
+.header-text span{
+    text-align:center;
+}
+
+.logo, .menu-nav__link{
+    padding-top: 5px;
+    
+}
+
+#show-slider .hcg-slide-container {
+    width: 1150px;
+    height: 500px;
+}
+
+.hcg-slider-body {
+    height: 100%;
+    width: 100%;
+}
+
+.hcg-slider {
+    text-align: center;
+}
+
+.hcg-slide-container {
+    max-width: 100%;
+    display: inline-block;
+    position: relative;
+}
+
+.hcg-slides {
+    width: 100%;
+    height: 100%;
+    display: none;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: solid 1px #a0a0a0;
+}
+
+.hcg-slides img {
+    max-width: 100%;
+    max-height: 100%;
+    display: inline-block;
+}
+
+.hcg-slide-dot-control {
+    position: relative;
+    width: 100%;
+    bottom: 50px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.hcg-slide-dot {
+    cursor: pointer;    
+    height: 13px;
+    width: 13px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.hcg-slide-dot.dot-active {
+    background-color: #717171;
+}
+
+.animated {
+    animation-name: fadeInLeft;
+    animation-duration: 1s;
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fadeInLeft {
+    animation-name: fadeInLeft;
+}
+
+.skdslider a.prev {
+    background: url("http://i.imgur.com/mFM1vMl.png") no-repeat scroll 0 0 transparent;
+    width: 35px;
+    height: 35px;
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 2%;
+    margin-top: -17px;
+}
+
+.skdslider a.next {
+    background: url("http://i.imgur.com/RA6U5UR.png") no-repeat scroll 0 0 transparent;
+    width: 35px;
+    height: 35px;
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    margin-top: -17px;
+}
+.map-desc {
+    background-color: #fff;
+    padding: 60px;
+    display: flex;
+    position: absolute;
+}
+.desc-left {
+    margin-left: 30px;
+}
+.address {
+    margin-bottom: 40px;
+}
+.desc-right {
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid lightgrey;
+    margin-left: 20px;
+    padding-left: 40px;
+}
+.map {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.home .desc-address, .home .desc-opening, .home .desc-get {
+    font-size: 12px;
+    color: gray;
+    width: 150px;
+    padding: 0;
+    margin: 0;
+}
+.home .title-address, .home .title-get, .home .title-opening {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.desc-get {
+    margin-bottom: 20px;
+}
+.desc-right lable {
+    font-size: 14px;
+    color:orange;
+    margin-bottom: 5px;
+}
+.home .desc-right input {
+    width: 150px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid orange;
+    padding: 5px;
+    margin-bottom: 10px;
+    background-color: none;
+}
+.home .button-request {
+    padding: 10px;
+    background-color: orange;
+    border: none;
+    color: #fff;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 30px;
+}
