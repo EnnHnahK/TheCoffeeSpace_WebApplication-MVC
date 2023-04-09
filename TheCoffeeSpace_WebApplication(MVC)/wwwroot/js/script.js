@@ -150,6 +150,7 @@ function toggleMenu() {
   }
 }
 
+
 // Shopping Cart Open and Close Function
 const html = document.querySelector("html");
 const cart = document.querySelector(".cart");
@@ -549,6 +550,8 @@ function checkStorageForCart() {
  * Initializes item1 if it is already in the cart or needs to be added to the cart.
  * Caffe Americano
  */
+
+
 function initializeItem1() {
   item1Display.innerHTML += `<div class="one1-cart-item">
   <img src="../img/caffe-americano.jpg" alt="product" />
