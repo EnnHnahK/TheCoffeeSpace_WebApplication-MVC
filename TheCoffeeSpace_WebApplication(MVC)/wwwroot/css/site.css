@@ -224,7 +224,7 @@
     margin-bottom: 20px;
 }
 .desc-right lable {
-    font-size: 14px;
+  font-size: 14px;
     color:orange;
     margin-bottom: 5px;
 }
@@ -357,7 +357,7 @@
 
     .blog-slider__item.swiper-slide-active .blog-slider__content > *:nth-child(9) {
         transition-delay: 1.1s;
-    }
+}
 
     .blog-slider__item.swiper-slide-active .blog-slider__content > *:nth-child(10) {
         transition-delay: 1.2s;
@@ -695,7 +695,7 @@
     color: #ccc;
     padding: 10px 0;
     margin: 0;
-}
+  }
 #blog .section-area {
     background: #db8637;
 }
