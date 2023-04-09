@@ -909,7 +909,7 @@ font-family: "Baloo 2", cursive
             font-size: 0.75rem
         }
 
-    .home .pic-area, .menu .pic-area, .services .pic-area {
+    .home .pic-area, .menu .pic-area, .services .pic-area, .blog .pic-area {
         padding-top: 20vh
     }
 

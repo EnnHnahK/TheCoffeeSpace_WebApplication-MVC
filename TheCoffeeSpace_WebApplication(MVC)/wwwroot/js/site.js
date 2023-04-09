@@ -1,4 +1,4 @@
-﻿var TxtRotate = function(el, toRotate, period) {
+﻿var TxtRotate = function (el, toRotate, period) {
   this.toRotate = toRotate;
   this.el = el;
   this.loopNum = 0;
@@ -7,6 +7,8 @@
   this.tick();
   this.isDeleting = false;
 };
+
+
 
 TxtRotate.prototype.tick = function() {
   var i = this.loopNum % this.toRotate.length;
@@ -39,7 +41,13 @@ TxtRotate.prototype.tick = function() {
   }, delta);
 };
 
-window.onload = function() {
+window.onload = function () {
+    var load = document.getElementById("load")
+
+    setTimeout(() => {
+        load.style.display = "none";
+    }, 2500);
+
   var elements = document.getElementsByClassName('txt-rotate');
   for (var i=0; i<elements.length; i++) {
     var toRotate = elements[i].getAttribute('data-rotate');
@@ -54,6 +62,20 @@ window.onload = function() {
   css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
   document.body.appendChild(css);
 };
+
+var swiper = new Swiper('.blog-slider', {
+    spaceBetween: 30,
+    effect: 'fade',
+    loop: true,
+    mousewheel: {
+        invert: false,
+    },
+    // autoHeight: true,
+    pagination: {
+        el: '.blog-slider__pagination',
+        clickable: true,
+    }
+});
 
 (() => {
 	const images_list = [
@@ -323,3 +345,5 @@ jQuery(document).ready(function () {
         'animationType': 'fading'
     });
 });
+
+

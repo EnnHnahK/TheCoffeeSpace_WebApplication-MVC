@@ -4,12 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Space Coffee</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css'>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Marck+Script&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/site.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Marck+Script&display=swap"
-      rel="stylesheet"
-    />
     <link rel="icon" href="../img/favicon.png" />
   </head>
   <body>
@@ -106,6 +104,9 @@
       </div>
     </header>
     <main>
+        <div class="load" id="load">
+            <img src="../img/loadcoffee.gif" alt="" class="load__gif">
+        </div>
         @RenderBody()
         <footer>
             <div class="icons"> 
@@ -126,13 +127,11 @@
             </footer>
         </section>
     </main>
+    <script src="https://kit.fontawesome.com/c057664144.js" crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="../js/script.js"></script>
     <script src="../js/site.js"></script>
     <script src="../js/menu.js"></script>
-    <script
-      src="https://kit.fontawesome.com/c057664144.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   </body>
 </html>

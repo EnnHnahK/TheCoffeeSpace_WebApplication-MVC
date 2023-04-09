@@ -1192,7 +1192,7 @@ function initializeItem12() {
     Storage.removeAmount("item12");
   });
 }
-
+/*
 $(document).ready(function() {
     $('.menu-nav__item').click(function() {
         // Remove previous clicked tab class
@@ -1201,3 +1201,4 @@ $(document).ready(function() {
         $(this).addClass('active');
     });
 });
+*/
