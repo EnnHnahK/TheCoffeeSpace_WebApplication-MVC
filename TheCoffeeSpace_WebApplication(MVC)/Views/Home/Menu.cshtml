@@ -5,9 +5,6 @@
     ViewData["Title"] = "Menu";
     Layout = "~/Views/Shared/_LayoutDripcafe.cshtml";
 }
-<<<<<<<<< Temporary merge branch 1
-
-=========
 <header>
     <div class="cart-overlay">
         <div class="cart">
@@ -152,9 +149,9 @@
                     </div>
                 </div>
                 <h2>@items.TenSanPham</h2>
-                <h3>@items.GiaBan</h3>
+                    <h3>@(items.GiaBan.Value.ToString("n0")) VND</h3>
                 </div>
-                if(i == 11){
+            if(i == 11){
                     i = 0;
                 }
                 else{
@@ -165,6 +162,47 @@
         </div>
         @Html.PagedListPager(Model,page=>Url.Action("Menu",new {page=page}))
     </div>
-    
+
+    @{
+        string[] iCart = { "one1-cart-item", "two2-cart-item", "three3-cart-item", "four4-cart-item", "five5-cart-item", "six6-cart-item", "seven7-cart-item", "eight8-cart-item", "nine9-cart-item", "ten10-cart-item", "eleven11-cart-item", "twelve12-cart-item" };
+        string[] iRemove = { "remove-item-1", "remove-item-2", "remove-item-3", "remove-item-4", "remove-item-5", "remove-item-6", "remove-item-7", "remove-item-8", "remove-item-9", "remove-item-10", "remove-item-11", "remove-item-12" };
+        string[] iUp = {"item1Up", "item2Up", "item3Up", "item4Up", "item5Up", "item6Up", "item7Up", "item8Up", "item9Up", "item10Up", "item11Up", "item12Up"};
+        string[] iDown = {"item1Down", "item2Down", "item3Down", "item4Down", "item5Down", "item6Down", "item7Down", "item8Down", "item9Down", "item10Down", "item11Down", "item12Down"};
+        string[] iCounter = { "item1Counter", "item2Counter", "item3Counter", "item4Counter", "item5Counter", "item6Counter", "item7Counter", "item8Counter", "item9Counter", "item10Counter", "item11Counter", "item12Counter",};
+        string[] iAmount = { "item-amount1", "item-amount2", "item-amount3", "item-amount4", "item-amount5", "item-amount6", "item-amount7", "item-amount8", "item-amount9", "item-amount10", "item-amount11", "item-amount12"};
+        string[] iPrice = { "item-price1", "item-price2", "item-price3", "item-price4", "item-price5", "item-price6", "item-price7", "item-price8", "item-price9", "item-price10", "item-price11", "item-price12" };
+        int k = 0;
+    }
+    <div class="itemInCart" style="display: none">
+        @foreach(var items in Model){
+            <div id="@iCart[k].ToString()">
+                <div class="@iCart[k].ToString()">
+                    <img src= @Url.Content("../img/img_products/" + items.HinhAnh)  alt="The product is currently not available" />
+                    <div>
+                        <h3><span class="span-primary">@items.TenSanPham</span></h3>
+                        <h4 id="@iPrice[k].ToString()">@(items.GiaBan.Value.ToString("c0")) VND</h4>
+                        <span class="@iRemove[k].ToString()" >Remove</span>
+                    </div>
+                    <div>
+                            <div class="@iUp[k].ToString()">
+                            <i class="fas fa-chevron-up"></i>
+                        </div>
+                            <p class="@iAmount[k].ToString()">${@iCounter[k].ToString()}</p>
+                            <div class="@iDown[k].ToString()">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            if (k == 11){
+                k = 0;
+            }
+            else{
+                k++;
+            }
+
+        }
+
+    </div>
 
 

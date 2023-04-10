@@ -187,19 +187,17 @@ if (!localStorage.getItem("total")) {
  * @param {Float} moneyChange
  */
 function updateTotal(moneyChange) {
-  totalAmount += moneyChange;
-  localStorage.setItem("total", totalAmount.toString());
-  if (totalAmount > 1) {
-    total.innerHTML = `<span class="span-primary">Total Amount:</span> $${totalAmount.toFixed(
-      2
-    )}`;
-  } else {
-    total.innerHTML = `<br>
+    totalAmount += moneyChange;
+    localStorage.setItem("total", totalAmount.toString());
+    if (totalAmount > 1) {
+        total.innerHTML = `<span class="span-primary">Total Amount:</span> ${(totalAmount / 1000).toFixed(3).replace(/\d(?=(\d{3})+\.)/g, '$&,') } VND`;
+    } else {
+        total.innerHTML = `<br>
       <br>
       Your Shopping Cart is empty. <br>
         Add items to cart by hovering over / tapping on the images of products
     on the Menu page.`;
-  }
+    }
 }
 
 /* Item displays in the DOM */
@@ -312,163 +310,190 @@ if (localStorage.getItem("item12")) {
   item12Counter = 0;
 }
 
+
+
 // Tests whether or not person is on the Menu page
 if (document.querySelector(".one__cart__button")) {
-  // Item 1: Caffe Americano
-  const item1Button = document.querySelector(".one__cart__button");
+      // Item 1: Caffe Americano
+      const uPrice1 = document.getElementById("item-price1").innerHTML.toString().match(/\d+/g);
+      const price1 = uPrice1.toString().replace(/,/g, "");
+      const item1Button = document.querySelector(".one__cart__button");
 
-  item1Button.addEventListener("click", function () {
-    if (!localStorage.getItem("item1")) {
-      initializeItem1();
-    }
-    item1Counter++;
-    item1Amount.innerHTML = item1Counter;
-    updateTotal(2.1);
-    Storage.setAmount("item1", item1Counter);
-  });
+      item1Button.addEventListener("click", function () {
+        if (!localStorage.getItem("item1")) {
+          initializeItem1();
+        }
+        item1Counter++;
+        item1Amount.innerHTML = item1Counter;
+          updateTotal(parseInt(price1));
+        Storage.setAmount("item1", item1Counter);
+      });
 
   // Item 2: Caffe Misto
-  const item2Button = document.querySelector(".two__cart__button");
+      const uPrice2 = document.getElementById("item-price2").innerHTML.toString().match(/\d+/g);
+      const price2 = uPrice2.toString().replace(/,/g, "");
+      const item2Button = document.querySelector(".two__cart__button");
 
-  item2Button.addEventListener("click", function () {
-    if (!localStorage.getItem("item2")) {
-      initializeItem2();
-    }
-    item2Counter++;
-    item2Amount.innerHTML = item2Counter;
-    updateTotal(2.6);
-    Storage.setAmount("item2", item2Counter);
-  });
+      item2Button.addEventListener("click", function () {
+            if (!localStorage.getItem("item2")) {
+                initializeItem2();
+            }
+            item2Counter++;
+            item2Amount.innerHTML = item2Counter;
+            updateTotal(parseInt(price2));
+            Storage.setAmount("item2", item2Counter);
+      });
 
-  // Item 3: Blonde Caffe Americano
-  const item3Button = document.querySelector(".three__cart__button");
+    // Item 3: Blonde Caffe Americano
+      const uPrice3 = document.getElementById("item-price3").innerHTML.toString().match(/\d+/g)
+      const price3 = uPrice3.toString().replace(/,/g, "");
+      const item3Button = document.querySelector(".three__cart__button");
 
-  item3Button.addEventListener("click", function () {
-    if (!localStorage.getItem("item3")) {
-      initializeItem3();
-    }
-    item3Counter++;
-    item3Amount.innerHTML = item3Counter;
-    updateTotal(2.79);
-    Storage.setAmount("item3", item3Counter);
-  });
+      item3Button.addEventListener("click", function () {
+            if (!localStorage.getItem("item3")) {
+                initializeItem3();
+            }
+            item3Counter++;
+            item3Amount.innerHTML = item3Counter;
+            updateTotal(parseInt(price3));
+            Storage.setAmount("item3", item3Counter);
+      });
 
-  // Item 4: Blonde Roast
-  const item4Button = document.querySelector(".four__cart__button");
+    // Item 4: Blonde Roast
+    const uPrice4 = document.getElementById("item-price4").innerHTML.toString().match(/\d+/g)
+    const price4 = uPrice4.toString().replace(/,/g, "");
+    const item4Button = document.querySelector(".four__cart__button");
 
-  item4Button.addEventListener("click", function () {
-    if (!localStorage.getItem("item4")) {
-      initializeItem4();
-    }
-    item4Counter++;
-    item4Amount.innerHTML = item4Counter;
-    updateTotal(2.05);
-    Storage.setAmount("item4", item4Counter);
-  });
+    item4Button.addEventListener("click", function () {
+        if (!localStorage.getItem("item4")) {
+            initializeItem4();
+        }
+        item4Counter++;
+        item4Amount.innerHTML = item4Counter;
+        updateTotal(parseInt(price4));
+        Storage.setAmount("item4", item4Counter);
+    });
 
-  // Item 5: Dark Roast Coffee
-  const item5Button = document.querySelector(".five__cart__button");
+    // Item 5: Dark Roast Coffee
+    const uPrice5 = document.getElementById("item-price5").innerHTML.toString().match(/\d+/g)
+    const price5 = uPrice5.toString().replace(/,/g, "");
+    const item5Button = document.querySelector(".five__cart__button");
 
-  item5Button.addEventListener("click", function () {
-    if (!localStorage.getItem("item5")) {
-      initializeItem5();
-    }
-    item5Counter++;
-    item5Amount.innerHTML = item5Counter;
-    updateTotal(2.2);
-    Storage.setAmount("item5", item5Counter);
-  });
+    item5Button.addEventListener("click", function () {
+        if (!localStorage.getItem("item5")) {
+            initializeItem5();
+        }
+        item5Counter++;
+        item5Amount.innerHTML = item5Counter;
+        updateTotal(parseInt(price5));
+        Storage.setAmount("item5", item5Counter);
+    });
 
-  // Item 6: Pike Place® Roast
-  const item6Button = document.querySelector(".six__cart__button");
+    // Item 6: Pike Place® Roast
+    const uPrice6 = document.getElementById("item-price6").innerHTML.toString().match(/\d+/g)
+    const price6 = uPrice6.toString().replace(/,/g, "");
+    const item6Button = document.querySelector(".six__cart__button");
 
-  item6Button.addEventListener("click", function () {
-    if (!localStorage.getItem("item6")) {
-      initializeItem6();
-    }
-    item6Counter++;
-    item6Amount.innerHTML = item6Counter;
-    updateTotal(2.8);
-    Storage.setAmount("item6", item6Counter);
-  });
 
-  // Item 7: Decaf Pike Place® Roast
-  const item7Button = document.querySelector(".seven__cart__button");
+    item6Button.addEventListener("click", function () {
+        if (!localStorage.getItem("item6")) {
+            initializeItem6();
+        }
+        item6Counter++;
+        item6Amount.innerHTML = item6Counter;
+        updateTotal(parseInt(price6));
+        Storage.setAmount("item6", item6Counter);
+    });
 
-  item7Button.addEventListener("click", function () {
-    if (!localStorage.getItem("item7")) {
-      initializeItem7();
-    }
-    item7Counter++;
-    item7Amount.innerHTML = item7Counter;
-    updateTotal(2.25);
-    Storage.setAmount("item7", item7Counter);
-  });
+    // Item 7: Decaf Pike Place® Roast
+    const uPrice7 = document.getElementById("item-price7").innerHTML.toString().match(/\d+/g)
+    const price7 = uPrice7.toString().replace(/,/g, "");
+    const item7Button = document.querySelector(".seven__cart__button");
 
-  // Item 8: Cappuccino
-  const item8Button = document.querySelector(".eight__cart__button");
+    item7Button.addEventListener("click", function () {
+        if (!localStorage.getItem("item7")) {
+            initializeItem7();
+        }
+        item7Counter++;
+        item7Amount.innerHTML = item7Counter;
+        updateTotal(parseInt(price7));
+        Storage.setAmount("item7", item7Counter);
+    });
 
-  item8Button.addEventListener("click", function () {
-    if (!localStorage.getItem("item8")) {
-      initializeItem8();
-    }
-    item8Counter++;
-    item8Amount.innerHTML = item8Counter;
-    updateTotal(2.59);
-    Storage.setAmount("item8", item8Counter);
-  });
+    // Item 8: Cappuccino
+    const uPrice8 = document.getElementById("item-price8").innerHTML.toString().match(/\d+/g)
+    const price8 = uPrice8.toString().replace(/,/g, "");
+    const item8Button = document.querySelector(".eight__cart__button");
 
-  // Item 9: Blonde Cappuccino
-  const item9Button = document.querySelector(".nine__cart__button");
+    item8Button.addEventListener("click", function () {
+        if (!localStorage.getItem("item8")) {
+            initializeItem8();
+        }
+        item8Counter++;
+        item8Amount.innerHTML = item8Counter;
+        updateTotal(parseInt(price8));
+        Storage.setAmount("item8", item8Counter);
+    });
 
-  item9Button.addEventListener("click", function () {
-    if (!localStorage.getItem("item9")) {
-      initializeItem9();
-    }
-    item9Counter++;
-    item9Amount.innerHTML = item9Counter;
-    updateTotal(2.34);
-    Storage.setAmount("item9", item9Counter);
-  });
+    // Item 9: Blonde Cappuccino
+    const uPrice9 = document.getElementById("item-price9").innerHTML.toString().match(/\d+/g)
+    const price9 = uPrice9.toString().replace(/,/g, "");
+    const item9Button = document.querySelector(".nine__cart__button");
 
-  // Item 10: Espresso
-  const item10Button = document.querySelector(".ten__cart__button");
+    item9Button.addEventListener("click", function () {
+        if (!localStorage.getItem("item9")) {
+            initializeItem9();
+        }
+        item9Counter++;
+        item9Amount.innerHTML = item9Counter;
+        updateTotal(parseInt(price9));
+        Storage.setAmount("item9", item9Counter);
+    });
 
-  item10Button.addEventListener("click", function () {
-    if (!localStorage.getItem("item10")) {
-      initializeItem10();
-    }
-    item10Counter++;
-    item10Amount.innerHTML = item10Counter;
-    updateTotal(2.89);
-    Storage.setAmount("item10", item10Counter);
-  });
+    // Item 10: Espresso
+    const uPrice10 = document.getElementById("item-price10").innerHTML.toString().match(/\d+/g)
+    const price10 = uPrice10.toString().replace(/,/g, "");
+    const item10Button = document.querySelector(".ten__cart__button");
 
-  // Item 11: Espresso Macchiato
-  const item11Button = document.querySelector(".eleven__cart__button");
+    item10Button.addEventListener("click", function () {
+        if (!localStorage.getItem("item10")) {
+            initializeItem10();
+        }
+        item10Counter++;
+        item10Amount.innerHTML = item10Counter;
+        updateTotal(parseInt(price10));
+        Storage.setAmount("item10", item10Counter);
+    });
 
-  item11Button.addEventListener("click", function () {
-    if (!localStorage.getItem("item11")) {
-      initializeItem11();
-    }
-    item11Counter++;
-    item11Amount.innerHTML = item11Counter;
-    updateTotal(2.18);
-    Storage.setAmount("item11", item11Counter);
-  });
+    // Item 11: Espresso Macchiato
+    const uPrice11 = document.getElementById("item-price11").innerHTML.toString().match(/\d+/g)
+    const price11 = uPrice11.toString().replace(/,/g, "");
+    const item11Button = document.querySelector(".eleven__cart__button");
 
-  // Item 12: Flat White
-  const item12Button = document.querySelector(".twelve__cart__button");
+    item11Button.addEventListener("click", function () {
+        if (!localStorage.getItem("item11")) {
+            initializeItem11();
+        }
+        item11Counter++;
+        item11Amount.innerHTML = item11Counter;
+        updateTotal(parseInt(price11));
+        Storage.setAmount("item11", item11Counter);
+    });
 
-  item12Button.addEventListener("click", function () {
-    if (!localStorage.getItem("item12")) {
-      initializeItem12();
-    }
-    item12Counter++;
-    item12Amount.innerHTML = item12Counter;
-    updateTotal(2.75);
-    Storage.setAmount("item12", item12Counter);
-  });
+    // Item 12: Flat White
+    const uPrice12 = document.getElementById("item-price12").innerHTML.toString().match(/\d+/g)
+    const price12 = uPrice12.toString().replace(/,/g, "");
+    const item12Button = document.querySelector(".twelve__cart__button");
+
+    item12Button.addEventListener("click", function () {
+        if (!localStorage.getItem("item12")) {
+            initializeItem12();
+        }
+        item12Counter++;
+        item12Amount.innerHTML = item12Counter;
+        updateTotal(parseInt(price12));
+        Storage.setAmount("item12", item12Counter);
+    });
 }
 
 // Check if there are items in the local storage
@@ -553,53 +578,40 @@ function checkStorageForCart() {
 
 
 function initializeItem1() {
-  item1Display.innerHTML += `<div class="one1-cart-item">
-  <img src="../img/caffe-americano.jpg" alt="product" />
-    <div>
-      <h3><span class="span-primary">Caffè</span> Americano</h3>
-      <h4>$2.10</h4>
-      <span class="remove-item-1">Remove</span>
-    </div>
-    <div>
-      <div class="item1Up">
-      <i class="fas fa-chevron-up"></i>
-      </div>
-      <p class="item-amount1">${item1Counter}</p>
-      <div class="item1Down">
-      <i class="fas fa-chevron-down"></i>
-      </div>
-    </div>
-          </div >`;
-  item1Amount = document.querySelector(".item-amount1");
-  up1 = document.querySelector(".item1Up");
-  down1 = document.querySelector(".item1Down");
-  remove1 = document.querySelector(".remove-item-1");
+    const uPrice = document.getElementById("item-price1").innerHTML.toString().match(/\d+/g);
+      const price = uPrice.toString().replace(/,/g, "");
+      const collection = document.getElementById("one1-cart-item");
+      item1Display.innerHTML += collection.innerHTML;
+      item1Amount = document.querySelector(".item-amount1");
+      up1 = document.querySelector(".item1Up");
+      down1 = document.querySelector(".item1Down");
+      remove1 = document.querySelector(".remove-item-1");
 
-  up1.addEventListener("click", function () {
-    item1Counter++;
-    item1Amount.innerHTML = item1Counter;
-    updateTotal(2.1);
-    Storage.setAmount("item1", item1Counter);
-  });
+      up1.addEventListener("click", function () {
+        item1Counter++;
+        item1Amount.innerHTML = item1Counter;
+        updateTotal(parseInt(price));
+        Storage.setAmount("item1", item1Counter);
+      });
 
-  down1.addEventListener("click", function () {
-    item1Counter--;
-    item1Amount.innerHTML = item1Counter;
-    updateTotal(-2.1);
-    Storage.setAmount("item1", item1Counter);
+      down1.addEventListener("click", function () {
+        item1Counter--;
+        item1Amount.innerHTML = item1Counter;
+        updateTotal(-parseInt(price));
+        Storage.setAmount("item1", item1Counter);
 
-    if (item1Counter === 0) {
-      item1Display.innerHTML = "";
-      Storage.removeAmount("item1");
-    }
-  });
+        if (item1Counter === 0) {
+          item1Display.innerHTML = "";
+          Storage.removeAmount("item1");
+        }
+      });
 
-  remove1.addEventListener("click", function () {
-    item1Display.innerHTML = "";
-    updateTotal(-2.1 * item1Counter);
-    item1Counter = 0;
-    Storage.removeAmount("item1");
-  });
+      remove1.addEventListener("click", function () {
+        item1Display.innerHTML = "";
+        updateTotal(-parseInt(price) * item1Counter);
+        item1Counter = 0;
+        Storage.removeAmount("item1");
+      });
 }
 
 /**
@@ -607,53 +619,40 @@ function initializeItem1() {
  * Caffe Misto
  */
 function initializeItem2() {
-  item2Display.innerHTML += `<div class="two2-cart-item">
-  <img src="../img/caffe-misto.jpg" alt="product" />
-    <div>
-      <h3><span class="span-primary">Caffè</span> Misto</h3>
-      <h4>$2.60</h4>
-      <span class="remove-item-2">Remove</span>
-    </div>
-    <div>
-      <div class="item2Up">
-      <i class="fas fa-chevron-up"></i>
-      </div>
-      <p class="item-amount2">${item2Counter}</p>
-      <div class="item2Down">
-      <i class="fas fa-chevron-down"></i>
-      </div>
-    </div>
-          </div >`;
-  item2Amount = document.querySelector(".item-amount2");
-  up2 = document.querySelector(".item2Up");
-  down2 = document.querySelector(".item2Down");
-  remove2 = document.querySelector(".remove-item-2");
+    const uPrice = document.getElementById("item-price2").innerHTML.toString().match(/\d+/g);
+    const price = uPrice.toString().replace(/,/g, "");
+    const collection = document.getElementById("two2-cart-item");
+    item2Display.innerHTML += collection.innerHTML;
+    item2Amount = document.querySelector(".item-amount2");
+    up2 = document.querySelector(".item2Up");
+    down2 = document.querySelector(".item2Down");
+    remove2 = document.querySelector(".remove-item-2");
 
-  up2.addEventListener("click", function () {
-    item2Counter++;
-    item2Amount.innerHTML = item2Counter;
-    updateTotal(2.6);
-    Storage.setAmount("item2", item2Counter);
-  });
+    up2.addEventListener("click", function () {
+        item2Counter++;
+        item2Amount.innerHTML = item2Counter;
+        updateTotal(parseInt(price));
+        Storage.setAmount("item2", item2Counter);
+    });
 
-  down2.addEventListener("click", function () {
-    item2Counter--;
-    item2Amount.innerHTML = item2Counter;
-    updateTotal(-2.6);
-    Storage.setAmount("item2", item2Counter);
+    down2.addEventListener("click", function () {
+        item2Counter--;
+        item2Amount.innerHTML = item2Counter;
+        updateTotal(-parseInt(price));
+        Storage.setAmount("item2", item2Counter);
 
-    if (item2Counter === 0) {
-      item2Display.innerHTML = "";
-      Storage.removeAmount("item2");
-    }
-  });
+        if (item2Counter === 0) {
+            item2Display.innerHTML = "";
+            Storage.removeAmount("item2");
+        }
+    });
 
-  remove2.addEventListener("click", function () {
-    item2Display.innerHTML = "";
-    updateTotal(-2.6 * item2Counter);
-    item2Counter = 0;
-    Storage.removeAmount("item2");
-  });
+    remove2.addEventListener("click", function () {
+        item2Display.innerHTML = "";
+        updateTotal(-parseInt(price) * item2Counter);
+        item2Counter = 0;
+        Storage.removeAmount("item2");
+    });
 }
 
 /**
@@ -661,53 +660,40 @@ function initializeItem2() {
  * Blonde Caffe Americano
  */
 function initializeItem3() {
-  item3Display.innerHTML += `<div class="three3-cart-item">
-  <img src="../img/caffe-americano.jpg" alt="product" />
-    <div>
-      <h3><span class="span-primary">Blonde Caffè</span> Americano</h3>
-      <h4>$2.79</h4>
-      <span class="remove-item-3">Remove</span>
-    </div>
-    <div>
-      <div class="item3Up">
-      <i class="fas fa-chevron-up"></i>
-      </div>
-      <p class="item-amount3">${item3Counter}</p>
-      <div class="item3Down">
-      <i class="fas fa-chevron-down"></i>
-      </div>
-    </div>
-          </div >`;
-  item3Amount = document.querySelector(".item-amount3");
-  up3 = document.querySelector(".item3Up");
-  down3 = document.querySelector(".item3Down");
-  remove3 = document.querySelector(".remove-item-3");
+    const uPrice = document.getElementById("item-price3").innerHTML.toString().match(/\d+/g);
+    const price = uPrice.toString().replace(/,/g, "");
+    const collection = document.getElementById("three3-cart-item");
+    item3Display.innerHTML += collection.innerHTML;
+    item3Amount = document.querySelector(".item-amount3");
+    up3 = document.querySelector(".item3Up");
+    down3 = document.querySelector(".item3Down");
+    remove3 = document.querySelector(".remove-item-3");
 
-  up3.addEventListener("click", function () {
-    item3Counter++;
-    item3Amount.innerHTML = item3Counter;
-    updateTotal(2.79);
-    Storage.setAmount("item3", item3Counter);
-  });
+    up3.addEventListener("click", function () {
+        item3Counter++;
+        item3Amount.innerHTML = item3Counter;
+        updateTotal(parseInt(price));
+        Storage.setAmount("item3", item3Counter);
+    });
 
-  down3.addEventListener("click", function () {
-    item3Counter--;
-    item3Amount.innerHTML = item3Counter;
-    updateTotal(-2.79);
-    Storage.setAmount("item3", item3Counter);
+    down3.addEventListener("click", function () {
+        item3Counter--;
+        item3Amount.innerHTML = item3Counter;
+        updateTotal(-parseInt(price));
+        Storage.setAmount("item3", item3Counter);
 
-    if (item3Counter === 0) {
-      item3Display.innerHTML = "";
-      Storage.removeAmount("item3");
-    }
-  });
+        if (item3Counter === 0) {
+            item3Display.innerHTML = "";
+            Storage.removeAmount("item3");
+        }
+    });
 
-  remove3.addEventListener("click", function () {
-    item3Display.innerHTML = "";
-    updateTotal(-2.79 * item3Counter);
-    item3Counter = 0;
-    Storage.removeAmount("item3");
-  });
+    remove3.addEventListener("click", function () {
+        item3Display.innerHTML = "";
+        updateTotal(-parseInt(price) * item3Counter);
+        item3Counter = 0;
+        Storage.removeAmount("item3");
+    });
 }
 
 /**
@@ -715,53 +701,40 @@ function initializeItem3() {
  * Blonde Roast
  */
 function initializeItem4() {
-  item4Display.innerHTML += `<div class="four4-cart-item">
-  <img src="../img/dark-roast-coffee.jpg" alt="product" />
-    <div>
-      <h3><span class="span-primary">Blonde</span> Roast</h3>
-      <h4>$2.05</h4>
-      <span class="remove-item-4">Remove</span>
-    </div>
-    <div>
-      <div class="item4Up">
-      <i class="fas fa-chevron-up"></i>
-      </div>
-      <p class="item-amount4">${item4Counter}</p>
-      <div class="item4Down">
-      <i class="fas fa-chevron-down"></i>
-      </div>
-    </div>
-          </div >`;
-  item4Amount = document.querySelector(".item-amount4");
-  up4 = document.querySelector(".item4Up");
-  down4 = document.querySelector(".item4Down");
-  remove4 = document.querySelector(".remove-item-4");
+    const uPrice = document.getElementById("item-price4").innerHTML.toString().match(/\d+/g);
+    const price = uPrice.toString().replace(/,/g, "");
+    const collection = document.getElementById("four4-cart-item");
+    item4Display.innerHTML += collection.innerHTML;
+    item4Amount = document.querySelector(".item-amount4");
+    up4 = document.querySelector(".item4Up");
+    down4 = document.querySelector(".item4Down");
+    remove4 = document.querySelector(".remove-item-4");
 
-  up4.addEventListener("click", function () {
-    item4Counter++;
-    item4Amount.innerHTML = item4Counter;
-    updateTotal(2.05);
-    Storage.setAmount("item4", item4Counter);
-  });
+    up4.addEventListener("click", function () {
+        item4Counter++;
+        item4Amount.innerHTML = item4Counter;
+        updateTotal(parseInt(price));
+        Storage.setAmount("item4", item4Counter);
+    });
 
-  down4.addEventListener("click", function () {
-    item4Counter--;
-    item4Amount.innerHTML = item4Counter;
-    updateTotal(-2.05);
-    Storage.setAmount("item4", item4Counter);
+    down4.addEventListener("click", function () {
+        item4Counter--;
+        item4Amount.innerHTML = item4Counter;
+        updateTotal(-parseInt(price));
+        Storage.setAmount("item4", item4Counter);
 
-    if (item4Counter === 0) {
-      item4Display.innerHTML = "";
-      Storage.removeAmount("item4");
-    }
-  });
+        if (item4Counter === 0) {
+            item4Display.innerHTML = "";
+            Storage.removeAmount("item4");
+        }
+    });
 
-  remove4.addEventListener("click", function () {
-    item4Display.innerHTML = "";
-    updateTotal(-2.05 * item4Counter);
-    item4Counter = 0;
-    Storage.removeAmount("item4");
-  });
+    remove4.addEventListener("click", function () {
+        item4Display.innerHTML = "";
+        updateTotal(-parseInt(price) * item4Counter);
+        item4Counter = 0;
+        Storage.removeAmount("item4");
+    });
 }
 
 /**
@@ -769,53 +742,40 @@ function initializeItem4() {
  * Dark Roast Coffee
  */
 function initializeItem5() {
-  item5Display.innerHTML += `<div class="five5-cart-item">
-  <img src="../img/dark-roast-coffee.jpg" alt="product" />
-    <div>
-      <h3><span class="span-primary">Dark Roast</span> Coffee</h3>
-      <h4>$2.20</h4>
-      <span class="remove-item-5">Remove</span>
-    </div>
-    <div>
-      <div class="item5Up">
-      <i class="fas fa-chevron-up"></i>
-      </div>
-      <p class="item-amount5">${item5Counter}</p>
-      <div class="item5Down">
-      <i class="fas fa-chevron-down"></i>
-      </div>
-    </div>
-          </div >`;
-  item5Amount = document.querySelector(".item-amount5");
-  up5 = document.querySelector(".item5Up");
-  down5 = document.querySelector(".item5Down");
-  remove5 = document.querySelector(".remove-item-5");
+    const uPrice = document.getElementById("item-price5").innerHTML.toString().match(/\d+/g);
+    const price = uPrice.toString().replace(/,/g, "");
+    const collection = document.getElementById("five5-cart-item");
+    item5Display.innerHTML += collection.innerHTML;
+    item5Amount = document.querySelector(".item-amount5");
+    up5 = document.querySelector(".item5Up");
+    down5 = document.querySelector(".item5Down");
+    remove5 = document.querySelector(".remove-item-5");
 
-  up5.addEventListener("click", function () {
-    item5Counter++;
-    item5Amount.innerHTML = item5Counter;
-    updateTotal(2.2);
-    Storage.setAmount("item5", item5Counter);
-  });
+    up5.addEventListener("click", function () {
+        item5Counter++;
+        item5Amount.innerHTML = item5Counter;
+        updateTotal(parseInt(price));
+        Storage.setAmount("item5", item5Counter);
+    });
 
-  down5.addEventListener("click", function () {
-    item5Counter--;
-    item5Amount.innerHTML = item5Counter;
-    updateTotal(-2.2);
-    Storage.setAmount("item5", item5Counter);
+    down5.addEventListener("click", function () {
+        item5Counter--;
+        item5Amount.innerHTML = item5Counter;
+        updateTotal(-parseInt(price));
+        Storage.setAmount("item5", item5Counter);
 
-    if (item5Counter === 0) {
-      item5Display.innerHTML = "";
-      Storage.removeAmount("item5");
-    }
-  });
+        if (item5Counter === 0) {
+            item5Display.innerHTML = "";
+            Storage.removeAmount("item5");
+        }
+    });
 
-  remove5.addEventListener("click", function () {
-    item5Display.innerHTML = "";
-    updateTotal(-2.2 * item5Counter);
-    item5Counter = 0;
-    Storage.removeAmount("item5");
-  });
+    remove5.addEventListener("click", function () {
+        item5Display.innerHTML = "";
+        updateTotal(-parseInt(price) * item5Counter);
+        item5Counter = 0;
+        Storage.removeAmount("item5");
+    });
 }
 
 /**
@@ -823,53 +783,40 @@ function initializeItem5() {
  * Pike Place® Roast
  */
 function initializeItem6() {
-  item6Display.innerHTML += `<div class="six6-cart-item">
-  <img src="../img/dark-roast-coffee.jpg" alt="product" />
-    <div>
-      <h3><span class="span-primary">Pike Place®</span> Roast</h3>
-      <h4>$2.80</h4>
-      <span class="remove-item-6">Remove</span>
-    </div>
-    <div>
-      <div class="item6Up">
-      <i class="fas fa-chevron-up"></i>
-      </div>
-      <p class="item-amount6">${item6Counter}</p>
-      <div class="item6Down">
-      <i class="fas fa-chevron-down"></i>
-      </div>
-    </div>
-          </div >`;
-  item6Amount = document.querySelector(".item-amount6");
-  up6 = document.querySelector(".item6Up");
-  down6 = document.querySelector(".item6Down");
-  remove6 = document.querySelector(".remove-item-6");
+    const uPrice = document.getElementById("item-price6").innerHTML.toString().match(/\d+/g);
+    const price = uPrice.toString().replace(/,/g, "");
+    const collection = document.getElementById("six6-cart-item");
+    item6Display.innerHTML += collection.innerHTML;
+    item6Amount = document.querySelector(".item-amount6");
+    up6 = document.querySelector(".item6Up");
+    down6 = document.querySelector(".item6Down");
+    remove6 = document.querySelector(".remove-item-6");
 
-  up6.addEventListener("click", function () {
-    item6Counter++;
-    item6Amount.innerHTML = item6Counter;
-    updateTotal(2.8);
-    Storage.setAmount("item6", item6Counter);
-  });
+    up6.addEventListener("click", function () {
+        item6Counter++;
+        item6Amount.innerHTML = item6Counter;
+        updateTotal(parseInt(price));
+        Storage.setAmount("item6", item6Counter);
+    });
 
-  down6.addEventListener("click", function () {
-    item6Counter--;
-    item6Amount.innerHTML = item6Counter;
-    updateTotal(-2.8);
-    Storage.setAmount("item6", item6Counter);
+    down6.addEventListener("click", function () {
+        item6Counter--;
+        item6Amount.innerHTML = item6Counter;
+        updateTotal(-parseInt(price));
+        Storage.setAmount("item6", item6Counter);
 
-    if (item6Counter === 0) {
-      item6Display.innerHTML = "";
-      Storage.removeAmount("item6");
-    }
-  });
+        if (item6Counter === 0) {
+            item6Display.innerHTML = "";
+            Storage.removeAmount("item6");
+        }
+    });
 
-  remove6.addEventListener("click", function () {
-    item6Display.innerHTML = "";
-    updateTotal(-2.8 * item6Counter);
-    item6Counter = 0;
-    Storage.removeAmount("item6");
-  });
+    remove6.addEventListener("click", function () {
+        item6Display.innerHTML = "";
+        updateTotal(-parseInt(price) * item6Counter);
+        item6Counter = 0;
+        Storage.removeAmount("item6");
+    });
 }
 
 /**
@@ -877,53 +824,40 @@ function initializeItem6() {
  * Decaf Pike Place® Roast
  */
 function initializeItem7() {
-  item7Display.innerHTML += `<div class="seven7-cart-item">
-  <img src="../img/dark-roast-coffee.jpg" alt="product" />
-    <div>
-      <h3><span class="span-primary">Decaf Pike </span>Place® Roast</h3>
-      <h4>$2.25</h4>
-      <span class="remove-item-7">Remove</span>
-    </div>
-    <div>
-      <div class="item7Up">
-      <i class="fas fa-chevron-up"></i>
-      </div>
-      <p class="item-amount7">${item7Counter}</p>
-      <div class="item7Down">
-      <i class="fas fa-chevron-down"></i>
-      </div>
-    </div>
-          </div >`;
-  item7Amount = document.querySelector(".item-amount7");
-  up7 = document.querySelector(".item7Up");
-  down7 = document.querySelector(".item7Down");
-  remove7 = document.querySelector(".remove-item-7");
+    const uPrice = document.getElementById("item-price7").innerHTML.toString().match(/\d+/g);
+    const price = uPrice.toString().replace(/,/g, "");
+    const collection = document.getElementById("seven7-cart-item");
+    item7Display.innerHTML += collection.innerHTML;
+    item7Amount = document.querySelector(".item-amount7");
+    up7 = document.querySelector(".item7Up");
+    down7 = document.querySelector(".item7Down");
+    remove7 = document.querySelector(".remove-item-7");
 
-  up7.addEventListener("click", function () {
-    item7Counter++;
-    item7Amount.innerHTML = item7Counter;
-    updateTotal(2.25);
-    Storage.setAmount("item7", item7Counter);
-  });
+    up7.addEventListener("click", function () {
+        item7Counter++;
+        item7Amount.innerHTML = item7Counter;
+        updateTotal(parseInt(price));
+        Storage.setAmount("item7", item7Counter);
+    });
 
-  down7.addEventListener("click", function () {
-    item7Counter--;
-    item7Amount.innerHTML = item7Counter;
-    updateTotal(-2.25);
-    Storage.setAmount("item7", item7Counter);
+    down7.addEventListener("click", function () {
+        item7Counter--;
+        item7Amount.innerHTML = item7Counter;
+        updateTotal(-parseInt(price));
+        Storage.setAmount("item7", item7Counter);
 
-    if (item7Counter === 0) {
-      item7Display.innerHTML = "";
-      Storage.removeAmount("item7");
-    }
-  });
+        if (item7Counter === 0) {
+            item7Display.innerHTML = "";
+            Storage.removeAmount("item7");
+        }
+    });
 
-  remove7.addEventListener("click", function () {
-    item7Display.innerHTML = "";
-    updateTotal(-2.25 * item7Counter);
-    item7Counter = 0;
-    Storage.removeAmount("item7");
-  });
+    remove7.addEventListener("click", function () {
+        item7Display.innerHTML = "";
+        updateTotal(-parseInt(price) * item7Counter);
+        item7Counter = 0;
+        Storage.removeAmount("item7");
+    });
 }
 
 /**
@@ -931,53 +865,40 @@ function initializeItem7() {
  * Cappuccino
  */
 function initializeItem8() {
-  item8Display.innerHTML += `<div class="eight8-cart-item">
-  <img src="../img/cappuccino.jpg" alt="product" />
-    <div>
-      <h3><span class="span-primary">Cappu</span>ccino</h3>
-      <h4>$2.59</h4>
-      <span class="remove-item-8">Remove</span>
-    </div>
-    <div>
-      <div class="item8Up">
-      <i class="fas fa-chevron-up"></i>
-      </div>
-      <p class="item-amount8">${item8Counter}</p>
-      <div class="item8Down">
-      <i class="fas fa-chevron-down"></i>
-      </div>
-    </div>
-          </div >`;
-  item8Amount = document.querySelector(".item-amount8");
-  up8 = document.querySelector(".item8Up");
-  down8 = document.querySelector(".item8Down");
-  remove8 = document.querySelector(".remove-item-8");
+    const uPrice = document.getElementById("item-price8").innerHTML.toString().match(/\d+/g);
+    const price = uPrice.toString().replace(/,/g, "");
+    const collection = document.getElementById("eight8-cart-item");
+    item8Display.innerHTML += collection.innerHTML;
+    item8Amount = document.querySelector(".item-amount8");
+    up8 = document.querySelector(".item8Up");
+    down8 = document.querySelector(".item8Down");
+    remove8 = document.querySelector(".remove-item-8");
 
-  up8.addEventListener("click", function () {
-    item8Counter++;
-    item8Amount.innerHTML = item8Counter;
-    updateTotal(2.59);
-    Storage.setAmount("item8", item8Counter);
-  });
+    up8.addEventListener("click", function () {
+        item8Counter++;
+        item8Amount.innerHTML = item8Counter;
+        updateTotal(parseInt(price));
+        Storage.setAmount("item8", item8Counter);
+    });
 
-  down8.addEventListener("click", function () {
-    item8Counter--;
-    item8Amount.innerHTML = item8Counter;
-    updateTotal(-2.59);
-    Storage.setAmount("item8", item8Counter);
+    down8.addEventListener("click", function () {
+        item8Counter--;
+        item8Amount.innerHTML = item8Counter;
+        updateTotal(-parseInt(price));
+        Storage.setAmount("item8", item8Counter);
 
-    if (item8Counter === 0) {
-      item8Display.innerHTML = "";
-      Storage.removeAmount("item8");
-    }
-  });
+        if (item8Counter === 0) {
+            item8Display.innerHTML = "";
+            Storage.removeAmount("item8");
+        }
+    });
 
-  remove8.addEventListener("click", function () {
-    item8Display.innerHTML = "";
-    updateTotal(-2.59 * item8Counter);
-    item8Counter = 0;
-    Storage.removeAmount("item8");
-  });
+    remove8.addEventListener("click", function () {
+        item8Display.innerHTML = "";
+        updateTotal(-parseInt(price) * item8Counter);
+        item8Counter = 0;
+        Storage.removeAmount("item8");
+    });
 }
 
 /**
@@ -985,53 +906,40 @@ function initializeItem8() {
  * Blonde Cappuccino
  */
 function initializeItem9() {
-  item9Display.innerHTML += `<div class="nine9-cart-item">
-  <img src="../img/cappuccino.jpg" alt="product" />
-    <div>
-      <h3><span class="span-primary">Blonde</span> Cappuccino</h3>
-      <h4>$2.34</h4>
-      <span class="remove-item-9">Remove</span>
-    </div>
-    <div>
-      <div class="item9Up">
-      <i class="fas fa-chevron-up"></i>
-      </div>
-      <p class="item-amount9">${item9Counter}</p>
-      <div class="item9Down">
-      <i class="fas fa-chevron-down"></i>
-      </div>
-    </div>
-          </div >`;
-  item9Amount = document.querySelector(".item-amount9");
-  up9 = document.querySelector(".item9Up");
-  down9 = document.querySelector(".item9Down");
-  remove9 = document.querySelector(".remove-item-9");
+    const uPrice = document.getElementById("item-price9").innerHTML.toString().match(/\d+/g);
+    const price = uPrice.toString().replace(/,/g, "");
+    const collection = document.getElementById("nine9-cart-item");
+    item9Display.innerHTML += collection.innerHTML;
+    item9Amount = document.querySelector(".item-amount9");
+    up9 = document.querySelector(".item9Up");
+    down9 = document.querySelector(".item9Down");
+    remove9 = document.querySelector(".remove-item-9");
 
-  up9.addEventListener("click", function () {
-    item9Counter++;
-    item9Amount.innerHTML = item9Counter;
-    updateTotal(2.34);
-    Storage.setAmount("item9", item9Counter);
-  });
+    up9.addEventListener("click", function () {
+        item9Counter++;
+        item9Amount.innerHTML = item9Counter;
+        updateTotal(parseInt(price));
+        Storage.setAmount("item9", item9Counter);
+    });
 
-  down9.addEventListener("click", function () {
-    item9Counter--;
-    item9Amount.innerHTML = item9Counter;
-    updateTotal(-2.34);
-    Storage.setAmount("item9", item9Counter);
+    down9.addEventListener("click", function () {
+        item9Counter--;
+        item9Amount.innerHTML = item9Counter;
+        updateTotal(-parseInt(price));
+        Storage.setAmount("item9", item9Counter);
 
-    if (item9Counter === 0) {
-      item9Display.innerHTML = "";
-      Storage.removeAmount("item9");
-    }
-  });
+        if (item9Counter === 0) {
+            item9Display.innerHTML = "";
+            Storage.removeAmount("item9");
+        }
+    });
 
-  remove9.addEventListener("click", function () {
-    item9Display.innerHTML = "";
-    updateTotal(-2.34 * item9Counter);
-    item9Counter = 0;
-    Storage.removeAmount("item9");
-  });
+    remove9.addEventListener("click", function () {
+        item9Display.innerHTML = "";
+        updateTotal(-parseInt(price) * item9Counter);
+        item9Counter = 0;
+        Storage.removeAmount("item9");
+    });
 }
 
 /**
@@ -1039,53 +947,40 @@ function initializeItem9() {
  * Espresso
  */
 function initializeItem10() {
-  item10Display.innerHTML += `<div class="ten10-cart-item">
-  <img src="../img/espresso.jpg" alt="product" />
-    <div>
-      <h3><span class="span-primary">Espr</span>esso</h3>
-      <h4>$2.89</h4>
-      <span class="remove-item-10">Remove</span>
-    </div>
-    <div>
-      <div class="item10Up">
-      <i class="fas fa-chevron-up"></i>
-      </div>
-      <p class="item-amount10">${item10Counter}</p>
-      <div class="item10Down">
-      <i class="fas fa-chevron-down"></i>
-      </div>
-    </div>
-          </div >`;
-  item10Amount = document.querySelector(".item-amount10");
-  up10 = document.querySelector(".item10Up");
-  down10 = document.querySelector(".item10Down");
-  remove10 = document.querySelector(".remove-item-10");
+    const uPrice = document.getElementById("item-price10").innerHTML.toString().match(/\d+/g);
+    const price = uPrice.toString().replace(/,/g, "");
+    const collection = document.getElementById("ten10-cart-item");
+    item10Display.innerHTML += collection.innerHTML;
+    item10Amount = document.querySelector(".item-amount10");
+    up10 = document.querySelector(".item10Up");
+    down10 = document.querySelector(".item10Down");
+    remove10 = document.querySelector(".remove-item-10");
 
-  up10.addEventListener("click", function () {
-    item10Counter++;
-    item10Amount.innerHTML = item10Counter;
-    updateTotal(2.89);
-    Storage.setAmount("item10", item10Counter);
-  });
+    up10.addEventListener("click", function () {
+        item10Counter++;
+        item10Amount.innerHTML = item10Counter;
+        updateTotal(parseInt(price));
+        Storage.setAmount("item10", item10Counter);
+    });
 
-  down10.addEventListener("click", function () {
-    item10Counter--;
-    item10Amount.innerHTML = item10Counter;
-    updateTotal(-2.89);
-    Storage.setAmount("item10", item10Counter);
+    down10.addEventListener("click", function () {
+        item10Counter--;
+        item10Amount.innerHTML = item10Counter;
+        updateTotal(-parseInt(price));
+        Storage.setAmount("item10", item10Counter);
 
-    if (item10Counter === 0) {
-      item10Display.innerHTML = "";
-      Storage.removeAmount("item10");
-    }
-  });
+        if (item10Counter === 0) {
+            item10Display.innerHTML = "";
+            Storage.removeAmount("item10");
+        }
+    });
 
-  remove10.addEventListener("click", function () {
-    item10Display.innerHTML = "";
-    updateTotal(-2.89 * item10Counter);
-    item10Counter = 0;
-    Storage.removeAmount("item10");
-  });
+    remove10.addEventListener("click", function () {
+        item10Display.innerHTML = "";
+        updateTotal(-parseInt(price) * item10Counter);
+        item10Counter = 0;
+        Storage.removeAmount("item10");
+    });
 }
 
 /**
@@ -1093,53 +988,40 @@ function initializeItem10() {
  * Espresso Macchiato
  */
 function initializeItem11() {
-  item11Display.innerHTML += `<div class="eleven11-cart-item">
-  <img src="../img/espresso-macchiato.jpg" alt="product" />
-    <div>
-      <h3><span class="span-primary">Espresso</span> Macchiato</h3>
-      <h4>$2.18</h4>
-      <span class="remove-item-11">Remove</span>
-    </div>
-    <div>
-      <div class="item11Up">
-      <i class="fas fa-chevron-up"></i>
-      </div>
-      <p class="item-amount11">${item11Counter}</p>
-      <div class="item11Down">
-      <i class="fas fa-chevron-down"></i>
-      </div>
-    </div>
-          </div >`;
-  item11Amount = document.querySelector(".item-amount11");
-  up11 = document.querySelector(".item11Up");
-  down11 = document.querySelector(".item11Down");
-  remove11 = document.querySelector(".remove-item-11");
+    const uPrice = document.getElementById("item-price11").innerHTML.toString().match(/\d+/g);
+    const price = uPrice.toString().replace(/,/g, "");
+    const collection = document.getElementById("eleven11-cart-item");
+    item11Display.innerHTML += collection.innerHTML;
+    item11Amount = document.querySelector(".item-amount11");
+    up11 = document.querySelector(".item11Up");
+    down11 = document.querySelector(".item11Down");
+    remove11 = document.querySelector(".remove-item-11");
 
-  up11.addEventListener("click", function () {
-    item11Counter++;
-    item11Amount.innerHTML = item11Counter;
-    updateTotal(2.18);
-    Storage.setAmount("item11", item11Counter);
-  });
+    up11.addEventListener("click", function () {
+        item11Counter++;
+        item11Amount.innerHTML = item11Counter;
+        updateTotal(parseInt(price));
+        Storage.setAmount("item11", item11Counter);
+    });
 
-  down11.addEventListener("click", function () {
-    item11Counter--;
-    item11Amount.innerHTML = item11Counter;
-    updateTotal(-2.18);
-    Storage.setAmount("item11", item11Counter);
+    down11.addEventListener("click", function () {
+        item11Counter--;
+        item11Amount.innerHTML = item11Counter;
+        updateTotal(-parseInt(price));
+        Storage.setAmount("item11", item11Counter);
 
-    if (item11Counter === 0) {
-      item11Display.innerHTML = "";
-      Storage.removeAmount("item11");
-    }
-  });
+        if (item11Counter === 0) {
+            item11Display.innerHTML = "";
+            Storage.removeAmount("item11");
+        }
+    });
 
-  remove11.addEventListener("click", function () {
-    item11Display.innerHTML = "";
-    updateTotal(-2.18 * item11Counter);
-    item11Counter = 0;
-    Storage.removeAmount("item11");
-  });
+    remove11.addEventListener("click", function () {
+        item11Display.innerHTML = "";
+        updateTotal(-parseInt(price) * item11Counter);
+        item11Counter = 0;
+        Storage.removeAmount("item11");
+    });
 }
 
 /**
@@ -1147,61 +1029,38 @@ function initializeItem11() {
  * Flat White
  */
 function initializeItem12() {
-  item12Display.innerHTML += `<div class="twelve12-cart-item">
-  <img src="../img/flat-white.jpg" alt="product" />
-    <div>
-      <h3><span class="span-primary">Flat</span> White</h3>
-      <h4>$2.75</h4>
-      <span class="remove-item-12">Remove</span>
-    </div>
-    <div>
-      <div class="item12Up">
-      <i class="fas fa-chevron-up"></i>
-      </div>
-      <p class="item-amount12">${item12Counter}</p>
-      <div class="item12Down">
-      <i class="fas fa-chevron-down"></i>
-      </div>
-    </div>
-          </div >`;
-  item12Amount = document.querySelector(".item-amount12");
-  up12 = document.querySelector(".item12Up");
-  down12 = document.querySelector(".item12Down");
-  remove12 = document.querySelector(".remove-item-12");
+    const uPrice = document.getElementById("item-price12").innerHTML.toString().match(/\d+/g);
+    const price = uPrice.toString().replace(/,/g, "");
+    const collection = document.getElementById("twelve12-cart-item");
+    item12Display.innerHTML += collection.innerHTML;
+    item12Amount = document.querySelector(".item-amount12");
+    up12 = document.querySelector(".item12Up");
+    down12 = document.querySelector(".item12Down");
+    remove12 = document.querySelector(".remove-item-12");
 
-  up12.addEventListener("click", function () {
-    item12Counter++;
-    item12Amount.innerHTML = item12Counter;
-    updateTotal(2.75);
-    Storage.setAmount("item12", item12Counter);
-  });
-
-  down12.addEventListener("click", function () {
-    item12Counter--;
-    item12Amount.innerHTML = item12Counter;
-    updateTotal(-2.75);
-    Storage.setAmount("item12", item12Counter);
-
-    if (item12Counter === 0) {
-      item12Display.innerHTML = "";
-      Storage.removeAmount("item12");
-    }
-  });
-
-  remove12.addEventListener("click", function () {
-    item12Display.innerHTML = "";
-    updateTotal(-2.75 * item12Counter);
-    item12Counter = 0;
-    Storage.removeAmount("item12");
-  });
-}
-/*
-$(document).ready(function() {
-    $('.menu-nav__item').click(function() {
-        // Remove previous clicked tab class
-        $('.menu-nav__item').removeClass('active');
-        // Add class to the tab that triggered the click event
-        $(this).addClass('active');
+    up12.addEventListener("click", function () {
+        item12Counter++;
+        item12Amount.innerHTML = item12Counter;
+        updateTotal(parseInt(price));
+        Storage.setAmount("item12", item12Counter);
     });
-});
-*/
+
+    down12.addEventListener("click", function () {
+        item12Counter--;
+        item12Amount.innerHTML = item12Counter;
+        updateTotal(-parseInt(price));
+        Storage.setAmount("item12", item12Counter);
+
+        if (item12Counter === 0) {
+            item12Display.innerHTML = "";
+            Storage.removeAmount("item12");
+        }
+    });
+
+    remove12.addEventListener("click", function () {
+        item12Display.innerHTML = "";
+        updateTotal(-parseInt(price) * item12Counter);
+        item12Counter = 0;
+        Storage.removeAmount("item12");
+    });
+}
