@@ -56,10 +56,10 @@
     max-width: 1170px;
 }
 
-.menu .flex .box {
-    position: relative;
-    text-align: center
-}
+        .menu .flex .box {
+            position: relative;
+            text-align: center
+        }
 
             .menu .flex .box .box__btns {
                 position: absolute;

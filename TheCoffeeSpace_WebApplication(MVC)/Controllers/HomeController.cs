@@ -56,6 +56,11 @@ namespace TheCoffeeSpace_WebApplication_MVC_.Controllers
             return View();
         }
 
+<<<<<<<<< Temporary merge branch 1
+=========
+
+
+>>>>>>>>> Temporary merge branch 2
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
