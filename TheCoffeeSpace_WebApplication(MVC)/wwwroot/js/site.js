@@ -219,6 +219,7 @@ var swiper = new Swiper('.blog-slider', {
 
 
     $.skdslider.createNav = function (element, slides, config) {
+        /*
         if (config.showNextPrev == true) {
             var nextPrevButton = '<a class="prev"></a>';
             nextPrevButton += '<a class="next"></a>';
@@ -232,7 +233,7 @@ var swiper = new Swiper('.blog-slider', {
             element.find('a.next').click(function () {
                 $.skdslider.next(element, slides, config);
             });
-        }
+        }*/
     };
 
     $.skdslider.next = function (element, slides, config) {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace TheCoffeeSpace_WebApplication_MVC_.Models;
 
@@ -7,10 +8,12 @@ public partial class TbSanPham
 {
     public string MaSanPham { get; set; } = null!;
 
+    [RegularExpression(@"/^[a-zA-Z ,.'-]+$/i", ErrorMessage = "Sai định dạng, Yêu cầu không có số")]
     public string TenSanPham { get; set; } = null!;
 
     public decimal? GiaBan { get; set; }
 
+    [RegularExpression(@"?:png", ErrorMessage = "png la png")]
     public string? HinhAnh { get; set; }
 
     public string? GhiChu { get; set; }

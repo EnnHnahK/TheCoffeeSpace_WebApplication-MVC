@@ -2,6 +2,8 @@
     ViewData["Title"] = "Home Page";
     Layout = "_LayoutDripcafe";
 }
+
+@model List<TbSanPham>
 <section class="home">
     <div class="pic-area">
         <div class="pic-area-text">
@@ -10,9 +12,9 @@
                     <div class="hcg-slider-body">
                         <a class="hcg-slides animated" style="display:flex">
                             <img src="../img/img_slides/1.jpg" alt="1.jpg">
-            </a>
-        </div>
-    </div>
+                        </a>
+                    </div>
+                </div>
                 <div class="hcg-slide-dot-control"></div>
             </div>
         </div>
@@ -20,53 +22,47 @@
     <div class="main-area">
         <div class="section-area">
             <div class="section-A">
-                <div class="box-text">
-                    <h1>Who We Are</h1>
-                    <p>
-                        Our family at Drip Cafe has been providing the best coffee in
-                        the city since it was founded by our grandfather, Carlos
-                        Ramírez, in 1941. His patented coffee beans are crafted to
-                        have the perfect ingredients, texture, and flavor. To continue
-                        his legacy, we are dedicated to serve the city with our
-                        grandfather's high quality coffee.
-                    </p>
-                </div>
-                <div class="box-img">
-                    <img src="../img/who-we-are.jpg" alt="Who We Are" />
+                <div class="who-we-are">
+                    <div class="who-images">
+                        <img class="img-who" src="../img/img_home/img1.jpg" alt="Image of a woman with a cup of coffee">
+                        <img class="img-who" src="../img/img_home/img2.jpg" alt="Image of two cups of coffee">
+                        <img class="img-who" src="../img/img_home/img3.jpg" alt="Coffee beans image">
+                    </div>
+                    <div class="who-text">
+                        <h1 class="title-who">WHO WE ARE</h1>
+                        <p class="desc-who">We are a team of dedicated coffee fans who celebrate exceptional coffee brands and roasters by providing our guests the unique opportunity to try coffee drinks of the highest quality.</p>
+                        <button class="button-learn black">LEARN MORE</button>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="section-area">
             <div class="section-B">
-                <div class="box-text">
-                    <h1>Our Services</h1>
-                    <p>
-                        We provide the best quality coffee, comfort, and respect to
-                        all customers. We also have services ranging from hosting
-                        events such as karaoke, birthday parties, and game nights, as
-                        well as providing free 24/7 parking.
-                    </p>
-                </div>
-                <div class="box-img">
-                    <img src="../img/services.jpg" alt="Services" />
+                  <div class="menu_list_home">
+	                <div class="menu_banner">
+		                <a title="BROWN" sugar="" href="https://thecoffeehouse.com/collections/ca-phe"><img alt="BROWN SUGAR" class=" lazyloaded" src="https://file.hstatic.net/1000075078/file/banner_app_-_1029x720_edaa4031d7e048f49bf3647d686c701d.jpg" data-src="https://file.hstatic.net/1000075078/file/banner_app_-_1029x720_edaa4031d7e048f49bf3647d686c701d.jpg"></a>
+	                </div>
+	                
+                    @foreach(var items in Model){
+	                <div class="menu_item">
+		                <div class="menu_item_image">
+			                <a href="/products/cloudfee-hanh-nhan-nuong" title="@items.TenSanPham">
+                                <img src= @Url.Content("../img/img_products/" + items.HinhAnh)  alt="The product is currently not available" />
+			                <ul class="labels">
+			                </ul>
+		                </div>
+		                <div class="menu_item_info">
+			                <h3><a href="/products/cloudfee-hanh-nhan-nuong" title="@items.TenSanPham">@items.TenSanPham</a></h3>
+                                <div class="price_product_item">@(items.GiaBan.Value.ToString("n0")) VND</div>
+		                </div>
+	                </div>
+                    }
                 </div>
             </div>
         </div>
         <div class="section-area">
             <div class="section-C">
-                <div class="box-text">
-                    <h1>Menu</h1>
-                    <p>
-                        Our menu is guaranteed to contain the morning coffee you need
-                        to start your day. From our classic Caffè Americano to four
-                        types of Roast or one of our Espressos, you will find
-                        something to get the morning energy you need while enjoying
-                        every sip.
-                    </p>
-                </div>
-                <div class="box-img">
-                    <img src="../img/menu.jpg" alt="Menu" />
-                </div>
+                
             </div>
         </div>
         <div class="section-area">

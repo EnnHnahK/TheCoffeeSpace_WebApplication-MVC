@@ -19,7 +19,8 @@ namespace TheCoffeeSpace_WebApplication_MVC_.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var list = db.TbSanPhams.AsNoTracking().OrderBy(x => x.MaSanPham).Take(6).ToList();
+            return View(list);
         }
 
         public IActionResult Privacy()

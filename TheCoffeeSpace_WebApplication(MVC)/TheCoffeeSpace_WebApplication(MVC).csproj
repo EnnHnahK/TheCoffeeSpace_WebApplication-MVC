@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <Content Remove="compilerconfig.json" />
+    <Content Remove="wwwroot\css\x1t2n3u0.l4n~" />
   </ItemGroup>
 
   <ItemGroup>
