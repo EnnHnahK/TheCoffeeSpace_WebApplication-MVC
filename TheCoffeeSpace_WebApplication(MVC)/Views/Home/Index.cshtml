@@ -4,6 +4,9 @@
 }
 
 @model List<TbSanPham>
+<div class="load" id="load">
+    <img src="../img/loadcoffee.gif" alt="" class="load__gif">
+</div>
 <section class="home">
     <div class="pic-area">
         <div class="pic-area-text">
@@ -62,7 +65,55 @@
         </div>
         <div class="section-area">
             <div class="section-C">
-                
+                <div class="blog-container">
+                    <h2 class="blog_home_title">
+                        <img src="../img/favicon.png" style="width: 22px; margin-right: 10px; margin-bottom: 8px;">
+                            News
+                    </h2>
+                    <h3 class="blog_home_blogtitle">
+                        <a asp-controller="Home" asp-action="Blog">
+                            Latest Blog Post
+                        </a>
+                    </h3>
+                    <div class="blog_lists flex_wrap display_flex">
+                        <div class="blog_item flex_direction_column display_flex">
+                            <a class="article_item_image" href="" title="Tasty and Refreshing coffee">
+                                <div class="image">
+                                    <img src="../img/img_blog/blog-1.jpeg" alt="">
+                                </div>
+                            </a>
+                            <div class="article_item_info">
+                                <div class="article_published_at"><span>12/02/2023</span></div>
+                                <h3><a href="" title="Tasty and Refreshing coffee">Tasty and Refreshing coffee</a></h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, dicta.</p>
+                            </div>
+                        </div>
+                        <div class="blog_item flex_direction_column display_flex">
+                            <a class="article_item_image" href="" title="Tasty and Refreshing coffee">
+                                <div class="image">
+                                    <img src="../img/img_blog/blog-2.jpeg" alt="">
+                                </div>
+                            </a>
+                            <div class="article_item_info">
+                                <div class="article_published_at"><span>12/02/2023</span></div>
+                                <h3><a href="" title="Tasty and Refreshing coffee">Tasty and Refreshing coffee</a></h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, dicta.</p>
+                            </div>
+                        </div>
+                        <div class="blog_item flex_direction_column display_flex">
+                            <a class="article_item_image" href="" title="Tasty and Refreshing coffee">
+                                <div class="image">
+                                    <img src="../img/img_blog/blog-3.jpeg" alt="">
+                                </div>
+                            </a>
+                            <div class="article_item_info">
+                                <div class="article_published_at"><span>12/02/2023</span></div>
+                                <h3><a href="" title="Tasty and Refreshing coffee">Tasty and Refreshing coffee</a></h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, dicta.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="section-area">

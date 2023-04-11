@@ -55,7 +55,7 @@
                 <a asp-area="" asp-controller="Home" asp-action="Index" class="menu-nav__link"> Home </a>
             </li>
             <li class="menu-nav__item">
-                <a asp-area="" asp-controller="Home" asp-action="Menu" class="menu-nav__link"> Menu </a>
+                <a asp-area="" asp-controller="Home" asp-action="Menu" asp-route-target="all" class="menu-nav__link"> Menu </a>
             </li>
             <li class="menu-nav__item">
                  <a asp-area="" asp-controller="Home" asp-action="Services" class="menu-nav__link"> Services </a>
@@ -105,16 +105,13 @@
       </div>
     </header>
     <main>
-        <div class="load" id="load">
-            <img src="../img/loadcoffee.gif" alt="" class="load__gif">
-        </div>
         @RenderBody()
             <footer>
                 <div class="pages">
                     <h1 class="title-pages">Pages</h1>
                     <ul class="pages-text">
                         <li class="desc-pages"><a asp-area="" asp-controller="Home" asp-action="Index" class="menu-nav__link"> Home </a></li>
-                        <li class="desc-pages"><a asp-area="" asp-controller="Home" asp-action="Menu" class="menu-nav__link"> Menu </a></li>
+                    <li class="desc-pages"><a asp-area="" asp-controller="Home" asp-action="Menu" asp-route-target="all"  class="menu-nav__link"> Menu </a></li>
                         <li class="desc-pages"><a asp-area="" asp-controller="Home" asp-action="Services" class="menu-nav__link"> Services </a></li>
                         <li class="desc-pages"><a asp-area="" asp-controller="Home" asp-action="Blog" class="menu-nav__link"> Blog </a></li>
                         <li class="desc-pages"><a asp-area="" asp-controller="Home" asp-action="Contact" class="menu-nav__link"> Contact </a></li>

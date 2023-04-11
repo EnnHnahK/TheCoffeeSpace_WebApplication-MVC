@@ -32,13 +32,23 @@ namespace TheCoffeeSpace_WebApplication_MVC_.Controllers
         {
             return View();
         }
-        public IActionResult Menu(int? page)
+        public IActionResult Menu(int? page, string target)
         {
             int pageSize = 12;
             int pageNumber = page == null || page < 0 ? 1 : page.Value;
-            var listItem = db.TbSanPhams.AsNoTracking().OrderBy(x => x.MaSanPham).ToList();
-            PagedList<TbSanPham> pagedListItem = new PagedList<TbSanPham>(listItem, pageNumber, pageSize);
-            return View(pagedListItem);
+            if (target == "all")
+            {
+                var listItem = db.TbSanPhams.AsNoTracking().OrderBy(x => x.MaSanPham).ToList();
+                PagedList<TbSanPham> pagedListItem = new PagedList<TbSanPham>(listItem, pageNumber, pageSize);
+                ViewBag.target = target;
+                return View(pagedListItem);
+            }
+            else { 
+                var listItem = db.TbSanPhams.AsNoTracking().Where(x => x.MaNhomSp == target).OrderBy(x => x.MaSanPham).ToList();
+                PagedList<TbSanPham> pagedListItem = new PagedList<TbSanPham>(listItem, pageNumber, pageSize);
+                ViewBag.target = target;
+                return View(pagedListItem);
+            }
         }
         public IActionResult Blog()
         {
