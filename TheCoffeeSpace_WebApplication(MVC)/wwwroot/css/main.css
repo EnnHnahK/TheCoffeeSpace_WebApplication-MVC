@@ -4,6 +4,7 @@
     margin: 0
 }
 
+/* START MENU CSS*/
 .menu {
     background-color: #b66f2d;
     font-family: "Baloo 2", cursive
@@ -124,6 +125,9 @@
     opacity: 1
 }
 
+/*End*/
+/* START HOME CSS*/
+
 .home {
     font-family: "Baloo 2", cursive
 }
@@ -180,15 +184,10 @@
 
 .main-area h1 {
     font-size: 2rem;
-    /*text-align: center;
-    /*margin: 20px*/
 }
 
 .main-area p {
     font-size: 1.5rem;
-    /* align-items: center;
-        text-align: center;
-        margin: 10px 20%*/
 }
 
 .home .main-area .section-area .section-A {
@@ -224,7 +223,9 @@
 .home footer {
     background-color: #707070
 }
+/*End*/
 
+/* START SERVICES CSS*/
 .services {
     font-family: "Baloo 2", cursive
 }
@@ -309,6 +310,9 @@
     background-color: #707070
 }
 
+/*End*/
+
+/* START CONTACT CSS*/
 .contact {
     font-family: "Baloo 2", cursive
 }
@@ -385,7 +389,9 @@
     font-family: "Baloo 2", cursive;
     color: white
 }
+/*End*/
 
+/* START LOGIN CSS*/
 .sign-in {
     font-family: "Baloo 2", cursive
 }
@@ -592,7 +598,9 @@
     font-family: "Baloo 2", cursive;
     color: white
 }
+/*End*/
 
+/*RESPONSIVE*/
 @media screen and (min-width: 768px) {
     .no-scroll {
         overflow: auto
@@ -990,6 +998,7 @@ html {
     transition: all 0.5s ease-in-out
 }
 
+/* START HEADER CSS*/
 header .nav img {
     background: #e0e0e0;
     width: 25px;
@@ -1232,7 +1241,9 @@ header .ingredients h2, header .allergens h2 {
     color: #b66f2d;
     text-shadow: -1px -1px 0 #fff,1px -1px 0 #252525,-1px 1px 0 #252525,1px 1px 0 #252525
 }
+/*End*/
 
+/* START FOOTER CSS*/
 footer {
     font-family: "Baloo 2", cursive
 }
@@ -1261,4 +1272,4 @@ footer .copyright {
     margin-top: 2rem;
     float: right
 }
-
+/*End*/

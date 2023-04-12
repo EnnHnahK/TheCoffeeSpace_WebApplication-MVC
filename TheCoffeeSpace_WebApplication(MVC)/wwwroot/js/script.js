@@ -202,7 +202,7 @@ function updateTotal(moneyChange) {
 
 /* Item displays in the DOM */
 
-// Item Display: Item 1: Caffe Americano
+// Item Display: Item 1:
 const item1Display = document.querySelector(".item1-display");
 let item1Counter, item1Amount, up1, down1, remove1;
 if (localStorage.getItem("item1")) {
@@ -211,7 +211,7 @@ if (localStorage.getItem("item1")) {
   item1Counter = 0;
 }
 
-// Item Display: Item 2: Caffe Misto
+// Item Display: Item 2:
 const item2Display = document.querySelector(".item2-display");
 let item2Counter, item2Amount, up2, down2, remove2;
 if (localStorage.getItem("item2")) {
@@ -220,7 +220,7 @@ if (localStorage.getItem("item2")) {
   item2Counter = 0;
 }
 
-// Item Display: Item 3: Blonde Caffe Americano
+// Item Display: Item 3:
 const item3Display = document.querySelector(".item3-display");
 let item3Counter, item3Amount, up3, down3, remove3;
 if (localStorage.getItem("item3")) {
@@ -229,7 +229,7 @@ if (localStorage.getItem("item3")) {
   item3Counter = 0;
 }
 
-// Item Display: Item 4: Blonde Roast
+// Item Display: Item 4:
 const item4Display = document.querySelector(".item4-display");
 let item4Counter, item4Amount, up4, down4, remove4;
 if (localStorage.getItem("item4")) {
@@ -238,7 +238,7 @@ if (localStorage.getItem("item4")) {
   item4Counter = 0;
 }
 
-// Item Display: Item 5: Dark Roast Coffee
+// Item Display: Item 5:
 const item5Display = document.querySelector(".item5-display");
 let item5Counter, item5Amount, up5, down5, remove5;
 if (localStorage.getItem("item5")) {
@@ -247,7 +247,7 @@ if (localStorage.getItem("item5")) {
   item5Counter = 0;
 }
 
-// Item Display: Item 6: Pike Place® Roast
+// Item Display: Item 6:
 const item6Display = document.querySelector(".item6-display");
 let item6Counter, item6Amount, up6, down6, remove6;
 if (localStorage.getItem("item6")) {
@@ -256,7 +256,7 @@ if (localStorage.getItem("item6")) {
   item6Counter = 0;
 }
 
-// Item Display: Item 7: Decaf Pike Place® Roast
+// Item Display: Item 7:
 const item7Display = document.querySelector(".item7-display");
 let item7Counter, item7Amount, up7, down7, remove7;
 if (localStorage.getItem("item7")) {
@@ -265,7 +265,7 @@ if (localStorage.getItem("item7")) {
   item7Counter = 0;
 }
 
-// Item Display: Item 8: Cappuccino
+// Item Display: Item 8:
 const item8Display = document.querySelector(".item8-display");
 let item8Counter, item8Amount, up8, down8, remove8;
 if (localStorage.getItem("item8")) {
@@ -274,7 +274,7 @@ if (localStorage.getItem("item8")) {
   item8Counter = 0;
 }
 
-// Item Display: Item 9: Blonde Cappuccino
+// Item Display: Item 9:
 const item9Display = document.querySelector(".item9-display");
 let item9Counter, item9Amount, up9, down9, remove9;
 if (localStorage.getItem("item9")) {
@@ -283,7 +283,7 @@ if (localStorage.getItem("item9")) {
   item9Counter = 0;
 }
 
-// Item Display: Item 10: Espresso
+// Item Display: Item 10:
 const item10Display = document.querySelector(".item10-display");
 let item10Counter, item10Amount, up10, down10, remove10;
 if (localStorage.getItem("item10")) {
@@ -292,7 +292,7 @@ if (localStorage.getItem("item10")) {
   item10Counter = 0;
 }
 
-// Item Display: Item 11: Espresso Macchiato
+// Item Display: Item 11:
 const item11Display = document.querySelector(".item11-display");
 let item11Counter, item11Amount, up11, down11, remove11;
 if (localStorage.getItem("item11")) {
@@ -301,7 +301,7 @@ if (localStorage.getItem("item11")) {
   item11Counter = 0;
 }
 
-// Item Display: Item 12: Flat White
+// Item Display: Item 12:
 const item12Display = document.querySelector(".item12-display");
 let item12Counter, item12Amount, up12, down12, remove12;
 if (localStorage.getItem("item12")) {
@@ -310,11 +310,9 @@ if (localStorage.getItem("item12")) {
   item12Counter = 0;
 }
 
-
-
 // Tests whether or not person is on the Menu page
 if (document.querySelector(".one__cart__button")) {
-      // Item 1: Caffe Americano
+      // Item 1:
       const uPrice1 = document.getElementById("item-price1").innerHTML.toString().match(/\d+/g);
       const price1 = uPrice1.toString().replace(/,/g, "");
       const item1Button = document.querySelector(".one__cart__button");
@@ -329,7 +327,7 @@ if (document.querySelector(".one__cart__button")) {
         Storage.setAmount("item1", item1Counter);
       });
 
-  // Item 2: Caffe Misto
+  // Item 2:
       const uPrice2 = document.getElementById("item-price2").innerHTML.toString().match(/\d+/g);
       const price2 = uPrice2.toString().replace(/,/g, "");
       const item2Button = document.querySelector(".two__cart__button");
@@ -344,7 +342,7 @@ if (document.querySelector(".one__cart__button")) {
             Storage.setAmount("item2", item2Counter);
       });
 
-    // Item 3: Blonde Caffe Americano
+    // Item 3:
       const uPrice3 = document.getElementById("item-price3").innerHTML.toString().match(/\d+/g)
       const price3 = uPrice3.toString().replace(/,/g, "");
       const item3Button = document.querySelector(".three__cart__button");
@@ -359,7 +357,7 @@ if (document.querySelector(".one__cart__button")) {
             Storage.setAmount("item3", item3Counter);
       });
 
-    // Item 4: Blonde Roast
+    // Item 4:
     const uPrice4 = document.getElementById("item-price4").innerHTML.toString().match(/\d+/g)
     const price4 = uPrice4.toString().replace(/,/g, "");
     const item4Button = document.querySelector(".four__cart__button");
@@ -374,7 +372,7 @@ if (document.querySelector(".one__cart__button")) {
         Storage.setAmount("item4", item4Counter);
     });
 
-    // Item 5: Dark Roast Coffee
+    // Item 5:
     const uPrice5 = document.getElementById("item-price5").innerHTML.toString().match(/\d+/g)
     const price5 = uPrice5.toString().replace(/,/g, "");
     const item5Button = document.querySelector(".five__cart__button");
@@ -389,7 +387,7 @@ if (document.querySelector(".one__cart__button")) {
         Storage.setAmount("item5", item5Counter);
     });
 
-    // Item 6: Pike Place® Roast
+    // Item 6:
     const uPrice6 = document.getElementById("item-price6").innerHTML.toString().match(/\d+/g)
     const price6 = uPrice6.toString().replace(/,/g, "");
     const item6Button = document.querySelector(".six__cart__button");
@@ -405,7 +403,7 @@ if (document.querySelector(".one__cart__button")) {
         Storage.setAmount("item6", item6Counter);
     });
 
-    // Item 7: Decaf Pike Place® Roast
+    // Item 7:
     const uPrice7 = document.getElementById("item-price7").innerHTML.toString().match(/\d+/g)
     const price7 = uPrice7.toString().replace(/,/g, "");
     const item7Button = document.querySelector(".seven__cart__button");
@@ -420,7 +418,7 @@ if (document.querySelector(".one__cart__button")) {
         Storage.setAmount("item7", item7Counter);
     });
 
-    // Item 8: Cappuccino
+    // Item 8:
     const uPrice8 = document.getElementById("item-price8").innerHTML.toString().match(/\d+/g)
     const price8 = uPrice8.toString().replace(/,/g, "");
     const item8Button = document.querySelector(".eight__cart__button");
@@ -435,7 +433,7 @@ if (document.querySelector(".one__cart__button")) {
         Storage.setAmount("item8", item8Counter);
     });
 
-    // Item 9: Blonde Cappuccino
+    // Item 9:
     const uPrice9 = document.getElementById("item-price9").innerHTML.toString().match(/\d+/g)
     const price9 = uPrice9.toString().replace(/,/g, "");
     const item9Button = document.querySelector(".nine__cart__button");
@@ -450,7 +448,7 @@ if (document.querySelector(".one__cart__button")) {
         Storage.setAmount("item9", item9Counter);
     });
 
-    // Item 10: Espresso
+    // Item 10:
     const uPrice10 = document.getElementById("item-price10").innerHTML.toString().match(/\d+/g)
     const price10 = uPrice10.toString().replace(/,/g, "");
     const item10Button = document.querySelector(".ten__cart__button");
@@ -465,7 +463,7 @@ if (document.querySelector(".one__cart__button")) {
         Storage.setAmount("item10", item10Counter);
     });
 
-    // Item 11: Espresso Macchiato
+    // Item 11:
     const uPrice11 = document.getElementById("item-price11").innerHTML.toString().match(/\d+/g)
     const price11 = uPrice11.toString().replace(/,/g, "");
     const item11Button = document.querySelector(".eleven__cart__button");
@@ -480,7 +478,7 @@ if (document.querySelector(".one__cart__button")) {
         Storage.setAmount("item11", item11Counter);
     });
 
-    // Item 12: Flat White
+    // Item 12:
     const uPrice12 = document.getElementById("item-price12").innerHTML.toString().match(/\d+/g)
     const price12 = uPrice12.toString().replace(/,/g, "");
     const item12Button = document.querySelector(".twelve__cart__button");
@@ -499,51 +497,51 @@ if (document.querySelector(".one__cart__button")) {
 // Check if there are items in the local storage
 if (checkStorageForCart()) {
   if (localStorage.getItem("item1")) {
-    // Item 1: Caffe Americano
+    // Item 1:
     initializeItem1();
   }
   if (localStorage.getItem("item2")) {
-    // Item 2: Caffe Misto
+    // Item 2:
     initializeItem2();
   }
   if (localStorage.getItem("item3")) {
-    // Item 3: Blonde Caffe Americano
+    // Item 3:
     initializeItem3();
   }
   if (localStorage.getItem("item4")) {
-    // Item 4: Blonde Roast
+    // Item 4:
     initializeItem4();
   }
   if (localStorage.getItem("item5")) {
-    // Item 5: Dark Roast Coffee
+    // Item 5:
     initializeItem5();
   }
   if (localStorage.getItem("item6")) {
-    // Item 6: Pike Place® Roast
+    // Item 6:
     initializeItem6();
   }
   if (localStorage.getItem("item7")) {
-    // Item 7: Decaf Pike Place® Roast
+    // Item 7:
     initializeItem7();
   }
   if (localStorage.getItem("item8")) {
-    // Item 8: Cappuccino
+    // Item 8:
     initializeItem8();
   }
   if (localStorage.getItem("item9")) {
-    // Item 9: Blonde Cappuccino
+    // Item 9:
     initializeItem9();
   }
   if (localStorage.getItem("item10")) {
-    // Item 10: Espresso
+    // Item 10:
     initializeItem10();
   }
   if (localStorage.getItem("item11")) {
-    // Item 11: Espresso Macchiato
+    // Item 11:
     initializeItem11();
   }
   if (localStorage.getItem("item12")) {
-    // Item 12: Flat White
+    // Item 12:
     initializeItem12();
   }
 }
@@ -573,7 +571,6 @@ function checkStorageForCart() {
 
 /**
  * Initializes item1 if it is already in the cart or needs to be added to the cart.
- * Caffe Americano
  */
 
 
@@ -616,7 +613,6 @@ function initializeItem1() {
 
 /**
  * Initializes item2 if it is already in the cart or needs to be added to the cart.
- * Caffe Misto
  */
 function initializeItem2() {
     const uPrice = document.getElementById("item-price2").innerHTML.toString().match(/\d+/g);
@@ -657,7 +653,6 @@ function initializeItem2() {
 
 /**
  * Initializes item3 if it is already in the cart or needs to be added to the cart.
- * Blonde Caffe Americano
  */
 function initializeItem3() {
     const uPrice = document.getElementById("item-price3").innerHTML.toString().match(/\d+/g);
@@ -698,7 +693,6 @@ function initializeItem3() {
 
 /**
  * Initializes item4 if it is already in the cart or needs to be added to the cart.
- * Blonde Roast
  */
 function initializeItem4() {
     const uPrice = document.getElementById("item-price4").innerHTML.toString().match(/\d+/g);
@@ -739,7 +733,6 @@ function initializeItem4() {
 
 /**
  * Initializes item5 if it is already in the cart or needs to be added to the cart.
- * Dark Roast Coffee
  */
 function initializeItem5() {
     const uPrice = document.getElementById("item-price5").innerHTML.toString().match(/\d+/g);
@@ -780,7 +773,6 @@ function initializeItem5() {
 
 /**
  * Initializes item6 if it is already in the cart or needs to be added to the cart.
- * Pike Place® Roast
  */
 function initializeItem6() {
     const uPrice = document.getElementById("item-price6").innerHTML.toString().match(/\d+/g);
@@ -821,7 +813,6 @@ function initializeItem6() {
 
 /**
  * Initializes item7 if it is already in the cart or needs to be added to the cart.
- * Decaf Pike Place® Roast
  */
 function initializeItem7() {
     const uPrice = document.getElementById("item-price7").innerHTML.toString().match(/\d+/g);
@@ -862,7 +853,6 @@ function initializeItem7() {
 
 /**
  * Initializes item8 if it is already in the cart or needs to be added to the cart.
- * Cappuccino
  */
 function initializeItem8() {
     const uPrice = document.getElementById("item-price8").innerHTML.toString().match(/\d+/g);
@@ -903,7 +893,6 @@ function initializeItem8() {
 
 /**
  * Initializes item9 if it is already in the cart or needs to be added to the cart.
- * Blonde Cappuccino
  */
 function initializeItem9() {
     const uPrice = document.getElementById("item-price9").innerHTML.toString().match(/\d+/g);
@@ -944,7 +933,6 @@ function initializeItem9() {
 
 /**
  * Initializes item10 if it is already in the cart or needs to be added to the cart.
- * Espresso
  */
 function initializeItem10() {
     const uPrice = document.getElementById("item-price10").innerHTML.toString().match(/\d+/g);
@@ -985,7 +973,6 @@ function initializeItem10() {
 
 /**
  * Initializes item11 if it is already in the cart or needs to be added to the cart.
- * Espresso Macchiato
  */
 function initializeItem11() {
     const uPrice = document.getElementById("item-price11").innerHTML.toString().match(/\d+/g);
@@ -1026,7 +1013,6 @@ function initializeItem11() {
 
 /**
  * Initializes item12 if it is already in the cart or needs to be added to the cart.
- * Flat White
  */
 function initializeItem12() {
     const uPrice = document.getElementById("item-price12").innerHTML.toString().match(/\d+/g);
@@ -1064,6 +1050,8 @@ function initializeItem12() {
         Storage.removeAmount("item12");
     });
 }
+
+//User add to cart event
 $(function () {
     let $notifi = $(".cart_mess"),
         $pop = $(".pop");

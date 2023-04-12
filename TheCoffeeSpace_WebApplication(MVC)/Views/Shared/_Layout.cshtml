@@ -6,20 +6,19 @@
     <title>The Space Coffee</title>
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/site.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Marck+Script&display=swap"
-          rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Marck+Script&display=swap" rel="stylesheet" />
     <link rel="icon" href="../img/favicon.png" />
-
 </head>
 <body>
     <header>
+        <!--Start Header-->
         <div class="second-header">
             <div class="menu-btn">
                 <span class="menu-btn__burger"></span>
             </div>
-
             <nav class="nav">
                 <ul class="menu-nav">
+                    <!--Start Search Bar-->
                     <li class="menu-nav__item">
                         <div class="search-top-wrapper">
                             <form id="frm_search_head" action="/search">
@@ -30,9 +29,13 @@
                             </form>
                         </div>
                     </li>
+                    <!--End Search Bar-->
+                    <!--Start Text Rotate-->
                     <li class="menu-nav__item header-text">
                         <span class="txt-rotate" data-period="4000" data-rotate="[&quot;THE SPACE COFFEE&quot;,&quot;FROM IT5 WITH LOVE&quot;,&quot;WELCOME TO THE SPACE COFFEE!&quot;,&quot;SIGN BY ENNHNAHK&quot;]"><span class="wrap">PRESE</span><span class="typed-cursor">|</span>
                     </li>
+                    <!--End Text Rotate-->
+                    <!--Start Button Login-->
                     <li class="menu-nav__item">
                         <a asp-area="" asp-controller="Home" asp-action="SignIn" class="sign-in menu-nav__link">
                             <i class="fa fa-user" aria-hidden="true"></i>
@@ -43,8 +46,9 @@
                             Sign Up
                         </a>
                     </li>
-                    <br />
-                    <br />
+                    <!--End Button Login-->
+                    <br/>
+                    <br/>
                     <li class="menu-nav__item">
                         <a asp-area="" asp-controller="Home" asp-action="Index" class="logo menu-nav__link">
                             <img src="../img/favicon.png" />
@@ -52,6 +56,7 @@
                             <span class="logo-last">Coffee</span>
                         </a>
                     </li>
+                    <!--Start Navigation Bar-->
                     <li class="menu-nav__item">
                         <a asp-area="" asp-controller="Home" asp-action="Index" class="menu-nav__link"> Home </a>
                     </li>
@@ -72,11 +77,11 @@
                             <i class="fa fa-cart-plus" aria-hidden="true"></i>
                         </a>
                     </li>
+                    <!--End Navigation Bar-->
                 </ul>
             </nav>
         </div>
         <!-- Shopping Cart -->
-
         <div class="cart-overlay">
             <div class="cart">
                 <div class="cart__closeBtn">
@@ -87,7 +92,6 @@
                     <span class="span-primary">Shopping</span> Cart
                     <i class="fa fa-cart-arrow-down"></i>
                 </h2>
-
                 <!-- JS will add items here -->
                 <div class="item1-display"></div>
                 <div class="item2-display"></div>
@@ -111,7 +115,6 @@
     </main>
     <script src="../js/script.js"></script>
     <script src="../js/site.js"></script>
-    <script src="https://kit.fontawesome.com/c057664144.js"
-            crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/c057664144.js" crossorigin="anonymous"></script>
 </body>
 </html>

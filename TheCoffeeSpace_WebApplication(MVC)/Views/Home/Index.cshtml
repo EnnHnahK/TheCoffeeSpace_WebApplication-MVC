@@ -1,13 +1,15 @@
-﻿@{
+﻿@model List<TbSanPham>
+@{
     ViewData["Title"] = "Home Page";
     Layout = "_LayoutDripcafe";
 }
-
-@model List<TbSanPham>
+<!--Loading-->
 <div class="load" id="load">
     <img src="../img/loadcoffee.gif" alt="" class="load__gif">
 </div>
+
 <section class="home">
+    <!--Start Slider In Homepage-->
     <div class="pic-area">
         <div class="pic-area-text">
             <div id="show-slider" class="hcg-slider">
@@ -22,7 +24,9 @@
             </div>
         </div>
     </div>
+    <!--EnD-->
     <div class="main-area">
+        <!--Introduce The Space Coffee-->
         <div class="section-area">
             <div class="section-A">
                 <div class="who-we-are">
@@ -39,6 +43,8 @@
                 </div>
             </div>
         </div>
+        <!--EnD-->
+        <!--Introduce Product-->
         <div class="section-area">
             <div class="section-B">
                   <div class="menu_list_home">
@@ -63,6 +69,8 @@
                 </div>
             </div>
         </div>
+        <!--EnD-->
+        <!--Featured Blog-->
         <div class="section-area">
             <div class="section-C">
                 <div class="blog-container">
@@ -116,6 +124,8 @@
                 </div>
             </div>
         </div>
+        <!--EnD-->
+        <!--Roadmap -->
         <div class="section-area">
             <div class="map">
             <iframe width="1275" height="520" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=1275&amp;height=520&amp;hl=en&amp;q=Cau%20Giay%20Ha%20Noi+(The%20Space%20Coffee%20Location)&amp;t=&amp;z=9&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href='https://maps-generator.com/'></a>
@@ -145,4 +155,5 @@
             </div>
             </div>
         </div>
+        <!--EnD-->
     </div>

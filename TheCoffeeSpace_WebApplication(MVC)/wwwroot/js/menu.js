@@ -1,3 +1,4 @@
+//Processing product detail display
 // View 1
 const view1 = document.querySelector(".one__view");
 const view1OpenBtn = document.querySelector(".one__view__openBtn");

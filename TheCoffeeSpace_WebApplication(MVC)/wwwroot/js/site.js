@@ -1,4 +1,7 @@
-﻿var TxtRotate = function (el, toRotate, period) {
+﻿//Processing other events of the website
+
+//Rotate Text Event in Header
+var TxtRotate = function (el, toRotate, period) {
   this.toRotate = toRotate;
   this.el = el;
   this.loopNum = 0;
@@ -7,8 +10,6 @@
   this.tick();
   this.isDeleting = false;
 };
-
-
 
 TxtRotate.prototype.tick = function() {
   var i = this.loopNum % this.toRotate.length;
@@ -62,7 +63,9 @@ window.onload = function () {
   css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
   document.body.appendChild(css);
 };
+//EnD
 
+//Slider Show
 var swiper = new Swiper('.blog-slider', {
     spaceBetween: 30,
     effect: 'fade',
@@ -347,5 +350,4 @@ jQuery(document).ready(function () {
     });
 });
 
-
-// Write your JavaScript code.
+//EnD

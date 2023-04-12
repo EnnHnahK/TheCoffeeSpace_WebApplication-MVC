@@ -1,3 +1,4 @@
+/* START SEARCH BAR CSS*/
 .search-top-wrapper {
     float: left;
     border: 1px solid #fff;
@@ -63,12 +64,17 @@
     color: white;
     border: #151515;
 }
+/*End*/
 
+/* START TEXT ROTATE IN HEADER CSS*/
 .txt-rotate {
     color: white;
     font-size: 1.5rem;
 
 }
+/*End*/
+
+
 .header-text{
     float: left;
     padding-left: 18%
@@ -990,7 +996,6 @@ footer .description {
 
 
 .blog_item {
-
     flex: 0 0 calc(33.333% - 30px);
     overflow: hidden;
     margin: 0 15px 0;
