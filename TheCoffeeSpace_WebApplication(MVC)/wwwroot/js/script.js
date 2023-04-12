@@ -172,6 +172,7 @@ cartCloseBtn.addEventListener("click", function () {
 
 // Shopping Cart Adding Items to Cart
 const total = document.querySelector(".total");
+const pay = document.querySelector(".pay");
 let totalAmount;
 
 // Establish totalAmount in local storage if not there already.
@@ -190,13 +191,19 @@ function updateTotal(moneyChange) {
     totalAmount += moneyChange;
     localStorage.setItem("total", totalAmount.toString());
     if (totalAmount > 1) {
-        total.innerHTML = `<span class="span-primary">Total Amount:</span> ${(totalAmount / 1000).toFixed(3).replace(/\d(?=(\d{3})+\.)/g, '$&,') } VND`;
+        total.innerHTML = `<span class="span-primary">Total Amount:</span> ${(totalAmount / 1000).toFixed(3).replace(/\d(?=(\d{3})+\.)/g, '$&,')} VND`;
+        if (currUser != "" && currUser != null) { 
+            pay.innerHTML += 'Pay';
+            pay.style.opacity = "1";
+        }
     } else {
         total.innerHTML = `<br>
       <br>
       Your Shopping Cart is empty. <br>
         Add items to cart by hovering over / tapping on the images of products
     on the Menu page.`;
+        pay.innerHTML = '';
+        pay.style.opacity = "0";
     }
 }
 

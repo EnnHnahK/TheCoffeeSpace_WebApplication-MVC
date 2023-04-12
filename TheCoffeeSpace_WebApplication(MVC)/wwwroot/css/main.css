@@ -1273,3 +1273,16 @@ footer .copyright {
     float: right
 }
 /*End*/
+
+.pay {
+    margin-top: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0.5rem 2rem;
+    letter-spacing: 1px;
+    background: #b66f2d;
+    border: 1px solid white;
+    color: white;
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+}
