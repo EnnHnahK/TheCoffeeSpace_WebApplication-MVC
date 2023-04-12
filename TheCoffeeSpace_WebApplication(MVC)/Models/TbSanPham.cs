@@ -18,6 +18,26 @@ public partial class TbSanPham
 
     public string? GhiChu { get; set; }
 
+    public string? Mota { get; set; }
+
+    public int? Calories { get; set; }
+
+    public int? TotalFat { get; set; }
+
+    public int? SaturatedFat { get; set; }
+
+    public int? Cholesterol { get; set; }
+
+    public int? Sodium { get; set; }
+
+    public int? TotalCarbohydrates { get; set; }
+
+    public int? Sugars { get; set; }
+
+    public int? Protein { get; set; }
+
+    public string? Ingredients { get; set; }
+   
     public string MaNhomSp { get; set; } = null!;
 
     public virtual TbNhomSanPham MaNhomSpNavigation { get; set; } = null!;

@@ -53,53 +53,51 @@
                   <i class="fas fa-mug-hot"></i>
                 </h2>
                 <div class="description">
-                  Espresso shots topped with hot water create a light layer of crema
-                  culminating in this wonderfully rich cup with depth and nuance.
+                  @items.Mota
                   <br />
-                  Pro Tip: For an additional boost, ask your barista to try this
-                  with an extra shot.
+
+                  Pro Tip: @items.GhiChu
                 </div>
                     <img src=@Url.Content("../img/img_products/" + items.HinhAnh) alt="The product is currently not available" />
                 <div class="nutritional_info">
                   <h2><span class="span-primary">Nutritional</span> Information</h2>
                   <div class="bar-large">Serving Size 16 fl oz</div>
                   <div class="bar-medium">
-                    <b>Calories</b> 15
+                    <b>Calories</b> @items.Calories
                     <span class="span-right">Calories from Fat 0</span>
                   </div>
                   <div class="bar-small">
                     <div class="span-align-right">% Daily Value *</div>
                   </div>
-                  <div class="bar-small"><b>Total Fat</b> 0 g</div>
+                  <div class="bar-small"><b>Total Fat</b> @items.TotalFat g</div>
                   <div class="bar-small">
-                    <div class="indent">Saturated Fat 0 g</div>
+                        <div class="indent">Saturated Fat @items.SaturatedFat 0 g</div>
                   </div>
                   <div class="bar-small">
                     <div class="indent">Trans Fat 0 g</div>
                   </div>
-                  <div class="bar-small"><b>Cholesterol</b> 0 mg</div>
+                  <div class="bar-small"><b>Cholesterol</b> @items.Cholesterol mg</div>
                   <div class="bar-small">
-                    <b>Sodium</b> 10 mg <span class="span-right">0%</span>
+                    <b>Sodium</b> @items.Sodium mg <span class="span-right">0%</span>
                   </div>
                   <div class="bar-small">
-                    <b>Total Carbohydrates</b> 2 g
+                    <b>Total Carbohydrates</b> @items.TotalCarbohydrates g
                     <span class="span-right">1%</span>
                   </div>
                   <div class="bar-small">
                     <div class="indent">Dietary Fiber 0 g</div>
                   </div>
-                  <div class="bar-small"><div class="indent">Sugars 0 g</div></div>
+                  <div class="bar-small"><div class="indent">@items.Sugars g</div></div>
                   <div class="bar-small">
-                    <b>Protein</b> 1 g <span class="span-right">2%</span>
+                    <b>Protein</b> @items.Protein g <span class="span-right">2%</span>
                   </div>
-                  <div class="bar-small"><b>Caffeine</b> 225 mg</div>
                   * 2,000 calories a day is used for general nutrition advice, but
                   calorie needs vary.
                 </div>
 
                 <div class="ingredients">
                   <h2>Ingredients</h2>
-                  Water, Brewed Espresso
+                    @items.Ingredients
                 </div>
 
                 <div class="allergens">
@@ -148,13 +146,13 @@
                             <a href="#!" class="box__btn @view[i].ToString()">
                                 View
                             </a>
-                                <a href="#!" class="box__btn @cart[i].ToString()">
+                                <a href="#!" class="box__btn cart_mess @cart[i].ToString()">
                                 Add to Cart
                             </a>
-                        </div>
+                         </div>
                     </div>
                     <h2>@items.TenSanPham</h2>
-                        <h3>@(items.GiaBan.Value.ToString("n0")) VND</h3>
+                        <h3>@(items.GiaBan.Value.ToString("n0")) VND</h3>  
                     </div>
                 if(i == 11){
                         i = 0;
@@ -167,7 +165,11 @@
             </div>
             @Html.PagedListPager(Model,page=>Url.Action("Menu",new {page=page}))
         </div>
+
      </div>
+    <div class="pop">
+        <div class="message">Sản phẩm đã được thêm vào giỏ hàng</div>
+    </div>
 
     @{
         string[] iCart = { "one1-cart-item", "two2-cart-item", "three3-cart-item", "four4-cart-item", "five5-cart-item", "six6-cart-item", "seven7-cart-item", "eight8-cart-item", "nine9-cart-item", "ten10-cart-item", "eleven11-cart-item", "twelve12-cart-item" };

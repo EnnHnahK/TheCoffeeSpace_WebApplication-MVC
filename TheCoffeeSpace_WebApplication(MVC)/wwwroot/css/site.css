@@ -1045,3 +1045,27 @@ footer .description {
     .blog-container {
     width: 740px;
 }
+
+.pop {
+    position: sticky;
+    bottom: 10px;
+    left: 95%;
+    width: 500px;
+    height: 80px;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pop .message {
+    background: #db8637;
+    flex: 1;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    font-size: 1.2em;
+    padding: 0 5px;
+    text-transform: uppercase;
+}

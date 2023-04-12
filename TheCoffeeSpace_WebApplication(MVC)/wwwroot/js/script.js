@@ -1064,3 +1064,30 @@ function initializeItem12() {
         Storage.removeAmount("item12");
     });
 }
+$(function () {
+    let $notifi = $(".cart_mess"),
+        $pop = $(".pop");
+    $notifi.click(function () {
+        TweenMax.fromTo(
+            $pop,
+            0.5,
+            {
+                x: 500
+            },
+            {
+                display: "flex",
+                x: -10,
+                yoyo: true,
+                ease: Bounce.easeOut
+            }
+        );
+        setTimeout(function () {
+            TweenMax.to($pop, 0.5, {
+                display: "none",
+                x: 510,
+                yoyo: true,
+                ease: Bounce.easeOut
+            });
+        }, 2000);
+    });
+});
