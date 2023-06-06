@@ -97,7 +97,32 @@
                   * 2,000 calories a day is used for general nutrition advice, but
                   calorie needs vary.
                 </div>
-
+                    <div>
+                        <p>@items.Star</p>
+                        <p>@items.Vote</p>
+                        
+                    </div>
+                    <form method="post" action="Vote">
+                        @*<label for="star-1">1</label>
+                        <input type="radio" id="star-1" name="star" value="1"/>
+                        <label for="star-2">2</label>
+                        <input type="radio" id="star-2" name="star" value="2"/>
+                        <label for="star-3">3</label>
+                        <input type="radio" id="star-3" name="star" value="3"/>
+                        <label for="star-4">4</label>
+                        <input type="radio" id="star-4" name="star" value="4"/>
+                        <label for="star-5">5</label>
+                        <input type="radio" id="star-5" name="star" value="5" />*@
+                        
+                        <button type="submit" asp-controller="Home" asp-action="Vote" asp-route-MaSanPham="@items.MaSanPham" asp-route-star="1" action="Vote">1</button>
+                            
+                        <button type="submit" asp-controller="Home" asp-action="Vote" asp-route-MaSanPham="@items.MaSanPham" asp-route-star="2" action="Vote">2</button>
+                            
+                        <button type="submit" asp-controller="Home" asp-action="Vote" asp-route-MaSanPham="@items.MaSanPham" asp-route-star="3" action="Vote">3</button>
+                            
+                        <button type="submit" asp-controller="Home" asp-action="Vote" asp-route-MaSanPham="@items.MaSanPham" asp-route-star="4" action="Vote">4</button>
+                        <button type="submit" asp-controller="Home" asp-action="Vote" asp-route-MaSanPham="@items.MaSanPham" asp-route-star="5" action="Vote">5</button>
+                    </form>
                 <div class="ingredients">
                   <h2>Ingredients</h2>
                     @items.Ingredients

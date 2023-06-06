@@ -36,7 +36,10 @@ namespace TheCoffeeSpace_WebApplication_MVC_.Controllers
         {
             int pageSize = 12;
             int pageNumber = page == null || page < 0 ? 1 : page.Value;
-            if (target == "all")
+            if (target == "all")    
+
+
+
             {
                 var listItem = db.TbSanPhams.AsNoTracking().OrderBy(x => x.MaSanPham).ToList();
                 PagedList<TbSanPham> pagedListItem = new PagedList<TbSanPham>(listItem, pageNumber, pageSize);
@@ -65,6 +68,21 @@ namespace TheCoffeeSpace_WebApplication_MVC_.Controllers
         public IActionResult SignUp()
         {
             return View();
+        }
+        // [HttpPost]
+        //[Route("Vote/{MaSanPham}/{Star}")]
+        public IActionResult Vote(string MaSanPham, int? star)
+        {
+
+            var sp = db.TbSanPhams.Where(x => x.MaSanPham == MaSanPham).ToList().First();
+            var starCu = sp.Star;
+            var soNguoiCu = sp.Vote;
+            float? starMoi = ((starCu * soNguoiCu) + (float) (star == null || star < 0 ? 1 : star.Value)) / (soNguoiCu + (float) 1);
+            sp.Star = starMoi;
+            sp.Vote = soNguoiCu + 1;
+            db.TbSanPhams.Update(sp);
+            db.SaveChanges();
+            return RedirectToAction("Menu");
         }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

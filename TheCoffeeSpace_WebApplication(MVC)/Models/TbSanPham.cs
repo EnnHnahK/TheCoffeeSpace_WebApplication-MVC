@@ -37,7 +37,11 @@ public partial class TbSanPham
     public int? Protein { get; set; }
 
     public string? Ingredients { get; set; }
-   
+
+    public float? Star { get; set; }
+
+    public int? Vote { get; set; }
+
     public string MaNhomSp { get; set; } = null!;
 
     public virtual TbNhomSanPham MaNhomSpNavigation { get; set; } = null!;

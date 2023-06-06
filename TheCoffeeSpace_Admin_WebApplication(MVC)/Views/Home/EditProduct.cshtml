@@ -1,0 +1,115 @@
+﻿@model TheCoffeeSpace_Admin_WebApplication_MVC_.Models.TbSanPham
+
+@{
+    ViewData["Title"] = "EditProduct";
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+}
+
+<h1>EditProduct</h1>
+
+<h4>TbSanPham</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditProduct">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="MaSanPham" />
+            <div class="form-group">
+                <label asp-for="TenSanPham" class="control-label"></label>
+                <input asp-for="TenSanPham" class="form-control" />
+                <span asp-validation-for="TenSanPham" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GiaBan" class="control-label"></label>
+                <input asp-for="GiaBan" class="form-control" />
+                <span asp-validation-for="GiaBan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HinhAnh" class="control-label"></label>
+                <input asp-for="HinhAnh" class="form-control" />
+                <span asp-validation-for="HinhAnh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GhiChu" class="control-label"></label>
+                <input asp-for="GhiChu" class="form-control" />
+                <span asp-validation-for="GhiChu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaNhomSp" class="control-label"></label>
+                <select asp-for="MaNhomSp" class="form-control" asp-items="ViewBag.MaNhomSp"></select>
+                <span asp-validation-for="MaNhomSp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Mota" class="control-label"></label>
+                <input asp-for="Mota" class="form-control" />
+                <span asp-validation-for="Mota" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Calories" class="control-label"></label>
+                <input asp-for="Calories" class="form-control" />
+                <span asp-validation-for="Calories" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalFat" class="control-label"></label>
+                <input asp-for="TotalFat" class="form-control" />
+                <span asp-validation-for="TotalFat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SaturatedFat" class="control-label"></label>
+                <input asp-for="SaturatedFat" class="form-control" />
+                <span asp-validation-for="SaturatedFat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cholesterol" class="control-label"></label>
+                <input asp-for="Cholesterol" class="form-control" />
+                <span asp-validation-for="Cholesterol" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sodium" class="control-label"></label>
+                <input asp-for="Sodium" class="form-control" />
+                <span asp-validation-for="Sodium" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalCarbohydrates" class="control-label"></label>
+                <input asp-for="TotalCarbohydrates" class="form-control" />
+                <span asp-validation-for="TotalCarbohydrates" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sugars" class="control-label"></label>
+                <input asp-for="Sugars" class="form-control" />
+                <span asp-validation-for="Sugars" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Protein" class="control-label"></label>
+                <input asp-for="Protein" class="form-control" />
+                <span asp-validation-for="Protein" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ingredients" class="control-label"></label>
+                <input asp-for="Ingredients" class="form-control" />
+                <span asp-validation-for="Ingredients" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vote" class="control-label"></label>
+                <input asp-for="Vote" class="form-control" />
+                <span asp-validation-for="Vote" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Star" class="control-label"></label>
+                <input asp-for="Star" class="form-control" />
+                <span asp-validation-for="Star" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
